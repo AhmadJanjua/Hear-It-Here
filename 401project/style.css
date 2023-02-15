@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.form{
+    min-height: 100vh;
+    display: flex;
+    background: -webkit-linear-gradient(left, #f92525, #3f5efb);
+ }
+ 
+ .form form{ 
+    padding:20px;
+    margin: auto;
+    background: #fff;
+    height: 400px;
+    width: 600px;
+    align-self: center;
+    text-align: center;
+    border-radius: 20px;
+ }
+ 
+ .userpass{
+    width: 250px;
+    padding: 10px 0;
+    border-right: none; /* remove right border*/
+    border-left: none; /* remove left border */
+    border-top: none; /* remove top border */
+    border-bottom: 1px solid; /* set bottom border to 1px solid line */
+    margin: 10px 0; 
+    outline: none; 
+    background: transparent; 
+ }
+
+ .submit{
+    color: #fff;
+    width: 200px; 
+    padding: 10px 30px; /* sets size: 10px top to bottom, 30px left to right */
+    cursor: pointer; /* when user hovers over submit botton, cursor changes to pointer */
+    margin: 20px; /* spacing */
+    background: -webkit-linear-gradient(left, #3f5efb, #f92525); 
+    border: 0; /* remove border for submit button */
+    border-radius: 25px; /* round corners for submit button */
+ }
+
+ .stay-signed-in{
+    color: #ed9292;
+ }
