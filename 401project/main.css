@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family:Verdana, sans-serif;
+}
+
+nav{
+    background: -webkit-linear-gradient(left, #f92525, #3f5efb);
+    height: 95px;
+    width: 100%;
+}
+
+label.hear-it-here-logo{
+    font-style: italic;
+    color: black;
+    font-size: 30px;
+    line-height: 95px;
+    padding: 0 20px;
+    font-weight: bold;
+}
+
+nav ul{
+    float: right;
+    margin-right: 25px;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 95px;
+    margin: 0 5px;
+}
+
+nav ul li a{
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+    position: relative;
+    border-radius: 10px;
+}
+
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: black;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.2s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+
