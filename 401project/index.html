@@ -2,26 +2,50 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="main">
+    <meta name="description" content="Main">
     <title>Main Menu</title>
     <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-    <div id="header">
-        <div class = "container">
-            <nav>
-                <label class = "hear-it-here-logo">Hear It Here</label>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="#">Other</a></li>
-                </ul>
-            </nav>
-
+    <nav>
+        <div class = "navbar">
+            <img src="New_Project_1.png" alt="logo">
+            <ul>
+                <li><a href="#">
+                    <ion-icon name="create-outline" class = "icons"></ion-icon>
+                </a></li>
+                <li><a href="#">
+                    <ion-icon name="chevron-down-outline" class = "icons"></ion-icon>
+                </a></li>
+            </ul>
         </div>
+    </nav>
 
-    </div>
+    <section>
+        <div class = "genres">
+            <a href="#" class = "buttons artist">Artist Discussion</a>
+            <a href="#" class = "buttons">Top New Singles</a>
+            <a href="#" class = "buttons">Album Reviews</a>
+            <a href="#" class = "buttons">Find Your Genre</a>
+        </div>    
+        
+    </section>
 
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        let nav = document.querySelector("nav");
+        window.onscroll = function () {
+            if (document.documentElement.scrollTop > 20) {
+                nav.classList.add("scroll");
+            } else {
+                nav.classList.remove("scroll");
+            }
+        }
+    </script>
 </body>
+
 </html>

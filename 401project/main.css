@@ -1,57 +1,104 @@
 *{
-    margin: 0;
     padding: 0;
-    text-decoration: none;
-    font-family:Verdana, sans-serif;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+html{
+    background: #2E5FC5;
+    background: -webkit-linear-gradient(bottom right, #2E5FC5, #7B86D8);
+    background: -moz-linear-gradient(bottom right, #2E5FC5, #7B86D8);
+    background: linear-gradient(to top left, #2E5FC5, #7B86D8);
 }
 
 nav{
-    background: -webkit-linear-gradient(left, #f92525, #3f5efb);
-    height: 95px;
+    position: fixed;
     width: 100%;
+    padding: 10px;
+    background: #201E20;
+    z-index: 500;
 }
 
-label.hear-it-here-logo{
-    font-style: italic;
-    color: black;
+.icons{
     font-size: 30px;
-    line-height: 95px;
-    padding: 0 20px;
-    font-weight: bold;
 }
-
-nav ul{
-    float: right;
-    margin-right: 25px;
-}
-
-nav ul li{
-    display: inline-block;
-    line-height: 95px;
-    margin: 0 5px;
-}
-
-nav ul li a{
+  
+nav .navbar{
+    height: 100%;
+    max-width: 95%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     color: #fff;
+}
+  
+.navbar ul{
+    display: flex;
+}
+  
+.navbar ul li{
+    list-style: none;
+    margin: 0 8px;
+}
+  
+nav ul li a{
+    color: black;
+    text-decoration: none;
+    text-shadow: 0px 2px 2px rgba(11, 3, 3, 0.4); 
     font-size: 15px;
-    text-transform: uppercase;
-    position: relative;
-    border-radius: 10px;
 }
 
-nav ul li a::after{
-    content: '';
-    width: 0;
-    height: 3px;
-    background: black;
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition: 0.2s;
+h2{
+    color: #fff;
 }
 
-nav ul li a:hover::after{
-    width: 100%;
+section{
+    padding: 1.5em;
 }
 
+.icons{
+    color: #fff;
+}
 
+.genres{
+    margin-top: 3%;
+    height: 80vh;
+    text-align: center;
+}
+
+.buttons{
+    display: inline-block;
+    font-size: 40px;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid black;
+    background: #201E20;
+    margin: 25px;
+    height: 320px;
+    width: 460px;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+}
+
+.artist{
+    background-image: url(OVO-Logo.png);
+}
+
+.buttons:hover{
+    color: aqua;
+    opacity: 0.9;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.logo{
+    background-image: url(HearitHere_Logo_1.png);
+}

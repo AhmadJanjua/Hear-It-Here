@@ -7,7 +7,10 @@
 .form{
     min-height: 100vh;
     display: flex;
-    background: -webkit-linear-gradient(left, #f92525, #3f5efb);
+    background: #2E5FC5;
+    background: -webkit-linear-gradient(bottom right, #2E5FC5, #7B86D8);
+    background: -moz-linear-gradient(bottom right, #2E5FC5, #7B86D8);
+    background: linear-gradient(to top left, #2E5FC5, #7B86D8);
  }
  
  .form form{ 
@@ -15,7 +18,7 @@
     margin: auto;
     background: #fff;
     height: 400px;
-    width: 600px;
+    width: 400px;
     align-self: center;
     text-align: center;
     border-radius: 20px;
@@ -39,7 +42,7 @@
     padding: 10px 30px; /* sets size: 10px top to bottom, 30px left to right */
     cursor: pointer; /* when user hovers over submit botton, cursor changes to pointer */
     margin: 20px; /* spacing */
-    background: -webkit-linear-gradient(left, #3f5efb, #f92525); 
+    background: #201E20;
     border: 0; /* remove border for submit button */
     border-radius: 25px; /* round corners for submit button */
  }
