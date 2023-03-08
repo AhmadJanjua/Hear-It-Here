@@ -7,10 +7,7 @@
 .form{
     min-height: 100vh;
     display: flex;
-    background: #2E5FC5;
-    background: -webkit-linear-gradient(bottom right, #2E5FC5, #7B86D8);
-    background: -moz-linear-gradient(bottom right, #2E5FC5, #7B86D8);
-    background: linear-gradient(to top left, #2E5FC5, #7B86D8);
+    background: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
  }
  
  .form form{ 

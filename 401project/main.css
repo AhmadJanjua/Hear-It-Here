@@ -5,10 +5,7 @@
 }
 
 html{
-    background: #2E5FC5;
-    background: -webkit-linear-gradient(bottom right, #2E5FC5, #7B86D8);
-    background: -moz-linear-gradient(bottom right, #2E5FC5, #7B86D8);
-    background: linear-gradient(to top left, #2E5FC5, #7B86D8);
+    background: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
 }
 
 nav{
@@ -21,6 +18,10 @@ nav{
 
 .icons{
     font-size: 30px;
+}
+
+.remove{
+    opacity: 0;
 }
   
 nav .navbar{
@@ -68,7 +69,9 @@ section{
 }
 
 .buttons{
-    display: inline-block;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
     font-size: 40px;
     text-decoration: none;
     color: #fff;
@@ -78,9 +81,7 @@ section{
     height: 320px;
     width: 460px;
     border-radius: 5px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
@@ -94,7 +95,6 @@ section{
 
 .buttons:hover{
     color: aqua;
-    opacity: 0.9;
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
