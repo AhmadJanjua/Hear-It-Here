@@ -1,11 +1,16 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Trebuchet MS', sans-serif;
 }
 
 html{
     background: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 nav{
@@ -51,54 +56,126 @@ nav ul li a{
 }
 
 h2{
-    color: #fff;
+    color: #201E20;
 }
 
 section{
-    padding: 1.5em;
+    margin: 0;
+    padding: 2em;
 }
 
 .icons{
     color: #fff;
 }
 
-.genres{
-    margin-top: 3%;
-    height: 80vh;
+.main {
+    margin-left: 10%;
+    margin-top: 8%;
+    height: 82vh;
+    font-size: 50px;
+}
+
+.main h2 {
+    font-size: 30px;
+}
+
+.button {
+    background-color:transparent;
+    padding:20px;
+    text-decoration: none;
+    border: 2px solid #201E20;
+    border-radius:10px;
+    width: 300px;
+    color:#201E20;
+    margin: 0 10px;
+    font-size:30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition-duration: 0.3s;
+}
+
+.button:hover{
+    color: #fff;
+    background: #201E20;
+}
+
+.create-post {
+    padding: 1em;
+    position: fixed;
+    margin: auto;
+    border-radius: 10px;
+    width: 700px;
+    height: 400px;
+    background: #fff;
+    color: black;
+    border: none;
+    overflow-x: hidden;
+}
+
+.create-post h1 {
     text-align: center;
 }
 
-.buttons{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
-    font-size: 40px;
-    text-decoration: none;
-    color: #fff;
-    border: 2px solid black;
+input[type=text] {
+    display: block;
+    width: 95%;
+    color: #201E20;
+    padding: 10px;
+    margin: 0 auto;
+    font-size: 15px;
+}
+
+select {
+    display: block;
+    width: 98.5%;
+    color: #201E20;
+    padding: 10px;
+    margin: 0 auto;
+    font-size: 15px;
+}
+
+textarea {
+    display: block;
+    width: 95%;
+    padding: 10px;
+    resize: vertical;
+    color: #201E20;
+    border-radius: 3px;
+    margin: 0 auto;
+    font-size: 15px;
+}
+
+.submit-button {
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    width: 120px;
+    border: 1px solid #201E20;
+    border-radius: 6px;
     background: #201E20;
-    margin: 25px;
-    height: 320px;
-    width: 460px;
-    border-radius: 5px;
-    display: inline-block;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: box-shadow, transform;
-    transition-property: box-shadow, transform;
+    color: #fff;
 }
 
-.artist{
-    background-image: url(OVO-Logo.png);
+.submit-button:hover {
+    cursor: pointer;
 }
 
-.buttons:hover{
-    color: aqua;
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+.center-btn {
+    text-align: center;
+}
+
+.close-btn {
+    font-size: 30px;
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    transition: color 0.2s;
 }
 
 .logo{
     background-image: url(HearitHere_Logo_1.png);
+}
+
+.login-btn {
+    color: #fff;
+    font-size: 20px;
 }

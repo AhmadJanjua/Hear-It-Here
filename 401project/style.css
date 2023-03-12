@@ -1,7 +1,7 @@
 *{
-    margin: 0;
-    padding: 0;
-    font-family:Verdana, sans-serif;
+   margin: 0;
+   padding: 0;
+   font-family: 'Trebuchet MS', sans-serif;
 }
 
 .form{
@@ -15,10 +15,15 @@
     margin: auto;
     background: #fff;
     height: 400px;
-    width: 400px;
+    width: 600px;
     align-self: center;
     text-align: center;
     border-radius: 20px;
+ }
+
+ h3 {
+   font-size: 30px;
+   margin-top: 10px;
  }
  
  .userpass{

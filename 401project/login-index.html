@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Main">
+    <title>Main Menu</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <nav>
+        <div class = "navbar">
+            <img src="New_Project_1.png" alt="logo">
+            <ul>
+                <li><a href="#" class="open-create-post">
+                    <ion-icon name="create-outline" class = "icons"></ion-icon>
+                </a></li>
+                <li><a href="##">
+                    <ion-icon name="chevron-down-outline" class = "icons"></ion-icon>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <div class="main">
+            <h1>Hear It Here</h1>
+            <h2>add subsentence here (bilal come up with something goofy)</h2>
+            <br><br><br>
+            <a href="artistDiscussion.html" class="button">Artist Discussion</a>
+            <a href="topNewSingles.html" class="button">Top New Singles</a>
+            <a href="albumReviews.html" class="button">Album Reviews</a>
+            <a href="findGenre.html" class="button">Find Your Genre</a>
+        </div>
+    </section>
+
+    <dialog class="create-post">
+        <h1>Create a Post</h1>
+        <a href="##" class="close-create-post close-btn">
+            <ion-icon name="close-outline"></ion-icon>
+        </a>
+        <br>
+        <input type="text" placeholder="Title" required>
+        <br>
+        <select required>
+            <option value="" disabled selected>Select Genre</option>
+            <option value="artist-select">Artist Discussion</option>
+            <option value="top-singles">Top New Singles</option>
+            <option value="album-review">Album Review</option>
+        </select>
+        <br>
+        <textarea id="message" placeholder="Text" name="message" rows="8" required></textarea>
+        <br>
+        <div class="center-btn">
+            <input class="submit-button" type="submit" value="Post">
+        </div>
+    </dialog>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        let nav = document.querySelector("nav");
+        window.onscroll = function () {
+            if (document.documentElement.scrollTop > 20) {
+                nav.classList.add("scroll");
+            } else {
+                nav.classList.remove("scroll");
+            }
+        }
+    </script>
+
+    <script>
+        const createPost = document.querySelector('.create-post');
+        const openCreatePost = document.querySelector('.open-create-post');
+        const closeCreatePost = document.querySelectorAll('.close-create-post');
+
+        openCreatePost.addEventListener('click', () => {
+            createPost.showModal();
+            document.querySelector("body").style.overflow = 'hidden';
+
+            createPost.addEventListener('keydown', (event) => {
+                if (event.keyCode === 27) { // escape 
+                    createPost.close();
+                    document.querySelector("body").style.overflow = 'visible';
+                }
+            });
+        })
+
+        for (let i = 0; i < closeCreatePost.length; i++) {
+            closeCreatePost[i].addEventListener('click', () => {
+                createPost.close();
+                document.querySelector("body").style.overflow = 'visible';
+            });
+        }
+    </script>
+</body>
+
+</html>
