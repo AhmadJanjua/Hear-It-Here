@@ -2,11 +2,81 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Album">
-    <title>Album Reviews</title>
-    <link rel="stylesheet" href="#">
+    <meta name="description" content="Album Review">
+    <title>Album Review</title>
+    <link rel="stylesheet" href="css/forum.css">
 </head>
 
 <body>
-    <h1>NOT READY FOR RELEASE TO THE PUBLIC</h1>
+    <nav>
+        <div class = "navbar">
+            <img src="images/New_Project_1.png" alt="logo">
+            <ul>
+                <li><a href="#" class="open-create-post">
+                    <ion-icon name="create-outline" class = "icons"></ion-icon>
+                </a></li>
+                <li><a href="##">
+                    <ion-icon name="chevron-down-outline" class = "icons"></ion-icon>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <div class="main">
+            <h1>FORUM PAGE</h1>
+        </div>
+    </section>
+
+    <dialog class="create-post">
+        <h1>Create a Post</h1>
+        <a href="##" class="close-create-post close-btn">
+            <ion-icon name="close-outline"></ion-icon>
+        </a>
+        <br>
+        <input type="text" placeholder="Title" required>
+        <br>
+        <select required>
+            <option value="" disabled selected>Select Genre</option>
+            <option value="artist-select">Artist Discussion</option>
+            <option value="top-singles">Top New Singles</option>
+            <option value="album-review">Album Review</option>
+        </select>
+        <br>
+        <textarea id="message" placeholder="Text" name="message" rows="8" required></textarea>
+        <br>
+        <div class="center-btn">
+            <input class="submit-button" type="submit" value="Post">
+        </div>
+    </dialog>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        const createPost = document.querySelector('.create-post');
+        const openCreatePost = document.querySelector('.open-create-post');
+        const closeCreatePost = document.querySelectorAll('.close-create-post');
+
+        openCreatePost.addEventListener('click', () => {
+            createPost.showModal();
+            document.querySelector("body").style.overflow = 'hidden';
+
+            createPost.addEventListener('keydown', (event) => {
+                if (event.keyCode === 27) { // escape 
+                    createPost.close();
+                    document.querySelector("body").style.overflow = 'visible';
+                }
+            });
+        })
+
+        for (let i = 0; i < closeCreatePost.length; i++) {
+            closeCreatePost[i].addEventListener('click', () => {
+                createPost.close();
+                document.querySelector("body").style.overflow = 'visible';
+            });
+        }
+    </script>
 </body>
+
+</html>

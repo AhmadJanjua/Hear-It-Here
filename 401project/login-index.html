@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="description" content="Main">
     <title>Main Menu</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
     <nav>
         <div class = "navbar">
-            <img src="New_Project_1.png" alt="logo">
+            <img src="images/New_Project_1.png" alt="logo">
             <ul>
                 <li><a href="#" class="open-create-post">
                     <ion-icon name="create-outline" class = "icons"></ion-icon>
@@ -58,17 +58,6 @@
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-    <script>
-        let nav = document.querySelector("nav");
-        window.onscroll = function () {
-            if (document.documentElement.scrollTop > 20) {
-                nav.classList.add("scroll");
-            } else {
-                nav.classList.remove("scroll");
-            }
-        }
-    </script>
 
     <script>
         const createPost = document.querySelector('.create-post');

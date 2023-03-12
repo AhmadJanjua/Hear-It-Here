@@ -29,10 +29,10 @@
  .userpass{
     width: 250px;
     padding: 10px 0;
-    border-right: none; /* remove right border*/
-    border-left: none; /* remove left border */
-    border-top: none; /* remove top border */
-    border-bottom: 1px solid; /* set bottom border to 1px solid line */
+    border-right: none; 
+    border-left: none; 
+    border-top: none; 
+    border-bottom: 1px solid; 
     margin: 10px 0; 
     outline: none; 
     background: transparent; 
@@ -41,12 +41,12 @@
  .submit{
     color: #fff;
     width: 200px; 
-    padding: 10px 30px; /* sets size: 10px top to bottom, 30px left to right */
-    cursor: pointer; /* when user hovers over submit botton, cursor changes to pointer */
-    margin: 20px; /* spacing */
+    padding: 10px 30px; 
+    cursor: pointer; 
+    margin: 20px; 
     background: #201E20;
-    border: 0; /* remove border for submit button */
-    border-radius: 25px; /* round corners for submit button */
+    border: 0; 
+    border-radius: 25px; 
  }
 
  .stay-signed-in{
