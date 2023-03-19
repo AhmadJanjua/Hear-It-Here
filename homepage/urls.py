@@ -1,6 +1,9 @@
 from django.urls import path
 from . import views
 
+# sets the namespace
+app_name = 'homepage'
+# directs the urls from root
 urlpatterns = [
-    path('', views.HomeResponse)
+    path('', views.home_response),
 ]

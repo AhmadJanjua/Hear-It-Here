@@ -52,16 +52,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# Email settings
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'foursevenseng@gmail.com'
-EMAIL_HOST_PASSWORD = 'seibyiiaoxwkspyy'
-
-AUTH_USER_MODEL = 'account.CustomUser'
-
 ROOT_URLCONF = 'forumsite.urls'
 
 TEMPLATES = [
@@ -117,20 +107,35 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# ~~~~~~~~~~~~~~~~Added Code
+
+# email configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'foursevenseng@gmail.com'
+EMAIL_HOST_PASSWORD = 'seibyiiaoxwkspyy'  # app access code !password
+
+# Have a custom user object
+AUTH_USER_MODEL = 'account.CustomUser'
+
+# After login or logout, send to main page
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

@@ -1,0 +1,49 @@
+{#loads in static files#}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Main">
+        <title>Hear It Here</title>
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    </head>
+
+    <body>
+        <header>
+            {#Checks if user is authenticated and based on that it prints buttons#}
+            <nav>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'account:logout' %}">Logout</a>
+                {% else %}
+                    <a href="{% url 'account:signup' %}">Sign Up</a>
+                    <a href="{% url 'account:login' %}">Login</a>
+                {% endif %}
+            </nav>
+
+            <br><br>
+
+            <nav>
+                <div class = "navbar">
+                    <img src="{% static 'images/New_Project_1.png' %}" alt="logo">
+                    <ul>
+                        <li><a href="#" class="open-create-post">
+                            <ion-icon name="create-outline" class = "icons"></ion-icon>
+                        </a></li>
+                        <li><a href="##">
+                            <ion-icon name="chevron-down-outline" class = "icons"></ion-icon>
+                        </a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <br><br><br>
+
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+    </body>
+</html>
