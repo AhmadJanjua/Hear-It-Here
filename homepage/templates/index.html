@@ -4,13 +4,12 @@
     <section>
         <div class="main">
             <h1>Hear It Here</h1>
-            <h2>add sub-sentence here (bilal come up with something goofy)</h2>
+            <h2>add sub-sentence here!!!!!!!!!!!!!!!!!</h2>
             <br><br><br>
+            <a href="{% url 'forum:categories' %}" class="button">View categories</a>
+            <a href="{% url 'forum:posts' category_id=1 %}" class="button">Artist Discussion</a>
+            <a href="{% url 'forum:posts' category_id=2 %}" class="button">Artist Discussion</a>
             {% if user.is_authenticated %}
-                <a href="../../401project/artistDiscussion.html" class="button">Artist Discussion</a>
-                <a href="../../401project/topNewSingles.html" class="button">Top New Singles</a>
-                <a href="../../401project/albumReviews.html" class="button">Album Reviews</a>
-                <a href="../../401project/findGenre.html" class="button">Find Your Genre</a>
                 <a href="{% url 'account:logout' %}" class='button'>Logout</a>
             {% else %}
                 <a href="account/signup" class="button">Sign Up</a>

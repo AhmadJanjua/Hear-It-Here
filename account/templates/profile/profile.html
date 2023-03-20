@@ -1,0 +1,17 @@
+{% extends 'templates/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <a href="{% url 'homepage:home' %}">Go to homepage!</a>
+    <br>
+    {% if profile.image %}
+        <img src="{% static profile.image %}"
+            alt="{{ profile.user.username }}'s profile picture"
+            width="30"
+            height=auto>
+    {% endif %}
+    <a>{{ profile.user.username }}</a>
+    <h4>{{ profile.name }}</h4>
+    <p>{{ profile.bio }}</p>
+{% endblock %}

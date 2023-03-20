@@ -1,0 +1,17 @@
+{% extends 'templates/base.html' %}
+
+{% block content %}
+    <h1>{{ category.description }} Posts</h1>
+    <br>
+    {% if user.is_authenticated %}
+        <a href="{% url 'forum:create_post' category_id=category.id %}">Create Post</a>
+        <br><br>
+    {% endif %}
+    <ul>
+    {% for post in posts %}
+        <h2><a href="{% url 'forum:view_post' category_id=category.id post_id=post.id %}">{{ post.title }}</a></h2>
+        <a>by {{ post.user }}</a>
+        <br><br>
+    {% endfor %}
+    </ul>
+{% endblock %}

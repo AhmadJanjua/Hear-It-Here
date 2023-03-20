@@ -5,5 +5,5 @@ from . import views
 app_name = 'homepage'
 # directs the urls from root
 urlpatterns = [
-    path('', views.home_response),
+    path('', views.home_response, name='home'),
 ]

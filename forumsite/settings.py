@@ -37,9 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sessions',
-    'comments.apps.CommentsConfig',
     'homepage.apps.HomepageConfig',
     'account.apps.AccountConfig',
+    'forum.apps.ForumConfig',
 ]
 
 MIDDLEWARE = [
@@ -137,5 +137,5 @@ EMAIL_HOST_PASSWORD = 'seibyiiaoxwkspyy'  # app access code !password
 AUTH_USER_MODEL = 'account.CustomUser'
 
 # After login or logout, send to main page
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/account/profile/'
 LOGOUT_REDIRECT_URL = '/'

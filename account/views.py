@@ -1,16 +1,16 @@
-from django.contrib.auth import login
-from django.contrib.auth import logout
 from django.core.mail import EmailMessage
-from django.shortcuts import render, reverse
+from django.shortcuts import render, reverse, get_object_or_404, redirect
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes, force_str
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
 from django.contrib.sites.shortcuts import get_current_site
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 
+from django.contrib.auth import login, logout
+
 from .forms import SignUpForm
-from .models import CustomUser
+from .models import CustomUser, Profile
 
 
 # defines the signup process
@@ -78,14 +78,15 @@ def activate(request, uidb64, token):
         return HttpResponse('Activation link is invalid!')
 
 
-def log_in(request):
-    login(request)
-    return HttpResponseRedirect('/')
+# redirects logins to the profile page
+def to_profile(request):
+    return redirect('account:profile', request.user.username)
 
 
-def log_out(request):
-    logout(request)
-    return HttpResponseRedirect('/')
+# make a simple view of the user's profile
+def profile(request, username):
+    pf = get_object_or_404(Profile, user__username=username)
+    return render(request, 'profile/profile.html', {'profile': pf})
 
 
 

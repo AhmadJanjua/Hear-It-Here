@@ -1,6 +1,5 @@
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
-import datetime
 
 
 # Model that controls the CustomUser and inherits from the base user manager
@@ -46,7 +45,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=255, null=False, unique=True)
     username = models.CharField(max_length=50, null=False, unique=True)
     birthday = models.DateField(null=False)
-    date_joined = models.DateTimeField(null=True, default=datetime.datetime.now())
+    date_joined = models.DateTimeField(auto_now_add=True)
     # have setting attributes
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
@@ -59,3 +58,13 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.username
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
+    name = models.CharField(max_length=30, blank=True)
+    bio = models.TextField(default='Hello, I am new', max_length=100, blank=True)
+    image = models.ImageField(default='pfp/default.png', upload_to='pfp/', null=True)
+
+    def __str__(self):
+        return self.user.username

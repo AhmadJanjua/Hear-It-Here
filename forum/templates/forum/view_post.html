@@ -1,0 +1,28 @@
+{% extends 'templates/base.html' %}
+
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    <p>by: {{ post.user }}</p>
+    <h3>{{ post.description }}</h3>
+    <br>
+    <h3>Comments</h3>
+    {% for comment in post.comment_set.all %}
+        <div>
+            <p>By: {{ comment.user }}</p>
+            <p>{{ comment.description }}</p>
+            <br>
+        </div>
+        {% empty %}
+            <p>No comments yet.</p>
+            <br>
+    {% endfor %}
+
+    {% if user.is_authenticated %}
+        <h3>Add a comment</h3>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    {% endif %}
+{% endblock %}
