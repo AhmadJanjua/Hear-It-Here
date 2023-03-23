@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from .models import CustomUser
+from .models import CustomUser, Profile
 
 
 # a form to ask for user information regarding
@@ -11,3 +11,10 @@ class SignUpForm(UserCreationForm):
     class Meta:
         model = CustomUser
         fields = ('email', 'username', 'password1', 'password2', 'birthday')
+
+
+class UpdateProfileForm(forms.ModelForm):
+
+    class Meta:
+        model = Profile
+        fields = ('name', 'bio')
