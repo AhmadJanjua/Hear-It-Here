@@ -32,6 +32,14 @@ def create_post(request, category_id):
     return render(request, 'forum/create_post.html', {'form': form, 'category': category})
 
 
+@login_required
+def delete_post(request, category_id, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    if post.user.id == request.user.id or request.user.is_staff:
+        post.delete()
+    return redirect('forum:posts', category_id=category_id)
+
+
 # browse the existing posts in a category
 def browse_posts(request, category_id):
     # try to get the object

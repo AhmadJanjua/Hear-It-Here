@@ -10,6 +10,9 @@
     <ul>
     {% for post in posts %}
         <h2><a href="{% url 'forum:view_post' category_id=category.id post_id=post.id %}">{{ post.title }}</a></h2>
+        {% if user.id == post.user_id or user.is_staff %}
+            <a href="{% url 'forum:delete_post' category_id=category.id post_id=post.id %}">Delete</a>
+        {% endif %}
         <a>by {{ post.user }}</a>
         <br><br>
     {% endfor %}
