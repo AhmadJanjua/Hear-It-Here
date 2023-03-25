@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
     'account.apps.AccountConfig',
     'forum.apps.ForumConfig',
-    'livereload'
 ]
 
 MIDDLEWARE = [
@@ -50,7 +49,6 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'livereload.middleware.LiveReloadScript',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 

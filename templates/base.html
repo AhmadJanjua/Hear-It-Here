@@ -1,86 +1,64 @@
-{#loads in static files#} {% load static %}
+{#loads in static files#}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>HearItHere</title>
-        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-        <script
-            src="https://kit.fontawesome.com/2bc3780a18.js"
-            crossorigin="anonymous"
-        ></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HearItHere</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/2bc3780a18.js" crossorigin="anonymous"></script>
+</head>
 
-    <body>
-        <header>
-            <div class="navbar">
-                <nav class="navigation hide" id="navigation">
-                    <ul class="nav-list">
-                        <span class="close-icon" onclick="showIconBar()"
-                            ><i class="fa fa-close"></i
-                        ></span>
-                        {% if user.is_authenticated %}
-                        <li class="nav-item">
+<body>
+    <header>
+        <div class = "navbar">
+            <nav class = "navigation hide" id = "navigation">
+                <ul class = "nav-list">
+                    <span class = "close-icon" onclick = "showIconBar()"><i class = "fa fa-close"></i></span>
+                    {% if user.is_authenticated %}
+                        <li class = "nav-item">
                             <a href="{% url 'account:logout' %}">Logout</a>
                         </li>
-                        <li class="nav-item">
-                            <a
-                                href="{% url 'account:profile' username=user.username %}"
-                                >Profile</a
-                            >
+                        <li class = "nav-item">
+                            <a href="{% url 'account:profile' username=user.username %}">Profile</a>
                         </li>
-                        {% else %}
-                        <li class="nav-item">
+                    {% else %}
+                        <li class = "nav-item">
                             <a href="{% url 'account:signup' %}">Sign Up</a>
                         </li>
-                        <li class="nav-item">
+                        <li class = "nav-item">
                             <a href="{% url 'account:login' %}">Login</a>
                         </li>
-                        {% endif %}
-                        <li class="nav-item">
-                            <a href="{% url 'homepage:home' %}">Home</a>
-                        </li>
-                    </ul>
-                </nav>
-                <a
-                    href="#"
-                    class="bar-icon"
-                    id="iconBar"
-                    onclick="hideIconBar()"
-                    ><i class="fa fa-bars"></i
-                ></a>
-                <div class="brand">
-                    <img src="{% static 'images/logo.png' %}" alt="logo" />
-                    HearItHere
-                </div>
-            </div>
+                    {% endif %}
+                    <li class = "nav-item">
+                        <a href="{% url 'homepage:home' %}">Home</a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="#" class="bar-icon" id = "iconBar" onclick = "hideIconBar()"><i class = "fa fa-bars"></i></a>
+            <div class = "brand"> <img src="{% static 'images/logo.png' %}" alt="logo"> HearItHere</div>
 
-            <form
-                class="search-box"
-                method="POST"
-                action="{% url 'forum:search_forum' %}"
-            >
-                {% csrf_token %}
-                <input
-                    type="search"
-                    name="search_forum"
-                    id="searcher"
-                    placeholder="search forums..."
-                />
-                <button><i class="fa fa-search"></i></button>
-            </form>
-        </header>
+        </div>
 
-        {% comment %} {# This where the subclass manifests; make sure to call
-        the block content #} {% endcomment %}
-        <main>{% block content %} {% endblock %}</main>
+        <form class = "search-box" method="POST" action="{% url 'forum:search_forum' %}">
+            {% csrf_token %}
+            <input type="search" name="search_forum" id="" placeholder="search forums..." >
+            <button><i class="fa fa-search"></i></button>
+        </form>
+    </header>
 
-        <footer>
-            <span>&copy; &nbsp; HearItHere</span>
-        </footer>
-        <script src="{% static 'code/main.js' %}"></script>
-    </body>
+    {# This where the subclass manifests; make sure to call the block content #}
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <span>&copy; &nbsp; HearItHere</span>
+    </footer>
+    <script src="{% static 'code/main.js' %}"></script>
+</body>
 </html>
