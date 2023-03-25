@@ -80,7 +80,7 @@
                     {% else %}
                         {{ post.comment_set.last.time }}
                         <br>
-                        By <b><a href="{% url 'account:profile' username=post.user.username %}">
+                        By <b><a href="{% url 'account:profile' username=post.comment_set.last.user.username %}">
                             {{ post.comment_set.last.user.username }}</a></b>
                     {% endif %}
 
