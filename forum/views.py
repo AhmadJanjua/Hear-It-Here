@@ -72,3 +72,12 @@ def view_post(request, category_id, post_id):
         form = CommentForm()
     # render the post page
     return render(request, 'forum/detail.html', {'post': post, 'form': form, 'comments': comments})
+
+
+def search_forum(request):
+    if request.method == "POST":
+        searched = request.POST['search_forum']
+        posts = Post.objects.filter(title__contains=searched)
+        return render(request, 'forum/search_forum.html', {'searched': searched, 'posts': posts})
+    else:
+        return render(request, 'forum/search_forum.html')

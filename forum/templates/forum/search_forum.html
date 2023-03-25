@@ -1,0 +1,57 @@
+{% extends 'templates/base.html' %}
+
+{% block content %}
+
+    {% if searched %}
+        <h1>You searched for {{ searched }}</h1>
+        <h2> {{ posts|length }} results</h2>
+        <div class = "posts-table">
+            <div class = "table-head">
+                <div class = "status">Status</div>
+                <div class = "subjects">Subjects</div>
+                <div class = "replies">Replies</div>
+                <div class = "last-reply">Recent Reply</div>
+            </div>
+
+            {% for post in posts %}
+            <div class = "table-row">
+                {% if post.comment_set.count == 0 %}
+                    <div class = "status"><i class="fa-solid fa-face-sad-tear"></i></div>
+                {% elif post.comment_set.count < 4 %}
+                    <div class = "status"><i class="fa-solid fa-face-smile"></i></div>
+                {% else %}
+                    <div class = "status"><i class="fa-solid fa-fire"></i></div>
+                {% endif %}
+
+                    <div class = "subjects"><a href="{% url 'forum:view_post' category_id=post.category.id post_id=post.id %}">
+                        {{ post.title }}</a>
+                    <br>
+                    <span>Created by <b><a href="{% url 'account:profile' username=post.user.username %}">
+                        {{ post.user.username }}</a></b></span>
+                    {% if user.id == post.user.id or user.is_staff %}
+                    <br>
+                    <span><button><a href="{% url 'forum:delete_post' category_id=post.category.id post_id=post.id %}">
+                        Delete</a></button></span>
+                    {% endif %}
+                </div>
+                <div class = "replies">
+                    {{ post.comment_set.count }} replies <br>
+                </div>
+                <div class = "last-reply">
+                    {% if post.comment_set.count == 0 %}
+                        No Comments Yet
+                    {% else %}
+                        {{ post.comment_set.last.time }}
+                        <br>
+                        By <b><a href="{% url 'account:profile' username=post.user.username %}">
+                            {{ post.comment_set.last.user.username }}</a></b>
+                    {% endif %}
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h1>ERROR: searched for nothing! {{ searched }}</h1>
+    {% endif %}
+{% endblock %}
