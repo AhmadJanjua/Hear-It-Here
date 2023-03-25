@@ -1,5 +1,4 @@
 {% extends 'templates/base.html' %}
-{% load static %}
 {% block content %}
 <header>
 	<div class="container">
@@ -10,7 +9,7 @@
 
 			<div class="profile-image">
 
-				<img src="{% static profile.image %}"
+				<img src="{{ profile.image.url }}"
                      alt="" height="80" width="auto">
 
 			</div>

@@ -50,7 +50,7 @@ def signup(request):
             email = EmailMessage(subject, message, to=[to_email])
             email.send()
             # Notify the user to check their email
-            return HttpResponse('Please confirm your email address to complete the registration.')
+            return render(request, 'registration/confirm.html')
     else:
         # if the form wasn't filled before, make a new empty form.
         form = SignUpForm()
