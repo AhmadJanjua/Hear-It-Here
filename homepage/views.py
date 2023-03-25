@@ -1,6 +1,14 @@
 from django.shortcuts import render
+from forum.models import Category
 
 
-# displays index.html
+# The home is a page with all categories and some stats displayed
 def home_response(request):
-    return render(request, 'index.html')
+    # get all categories
+    categories = Category.objects.all()
+    # get total number of posts
+    total = 0
+    for category in categories:
+        total += category.post_set.count()
+    # render the home page with category info
+    return render(request, 'index.html', {'categories': categories, 'total': total})

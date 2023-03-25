@@ -1,0 +1,72 @@
+{% extends 'templates/base.html' %}
+{% load static %}
+{% block content %}
+    <div class = "container">  
+
+        <div class = "navigate">
+            <span><a href="{% url 'forum:posts' category_id=post.category.id %}">
+                HearItHere - Forums >> {{ post.category.title }} >> {{ post.title }}</a></span>
+        </div>
+
+        <div class = "topic-container">
+            <div class = "head">
+                <div class = "authors">Author</div>
+                <div class = "content">Post: {{ post.title }}</div>
+            </div>
+
+            <div class = "body">
+                <div class = "authors">
+                    <div class = "User"><a href="{%  url 'account:profile' username=post.user.username %}">
+                        {{ post.user.username }}</a></div><img src="{% static post.user.profile.image %}" alt="">
+                    <div>Posts: <u>{{ post.user.post_set.count }}</u></div>
+                </div>
+
+                <div class = "content">
+                    {{ post.description }}
+                    {% if user.is_staff or user.id == post.user.id %}
+                    <hr>
+                    <div class = "comment">
+                        <button onclick="showComment()">Comment</button>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class = "comment-area hide" id="comment-area">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                <button type="submit">Submit</button>
+            </div>
+    
+        </div>
+
+
+        <div class = "comments-container">
+            <div class = "head">
+                <div class = "authors">Author</div>
+                <div class = "content">Comments</div>
+            </div>
+
+            {% for comment in comments %}
+            <div class = "body">
+                <div class = "authors">
+                    <div class = "AnotherUser"><a href="{% url 'account:profile' username=comment.user.username %}">
+                        {{ comment.user.username }}</a></div>
+                    <img src="{% static comment.user.profile.image %}" alt="">
+                    <div>Posts: <u>{{ comment.user.post_set.count }}</u></div>
+                </div>
+
+                <div class = "content">
+                    {{ comment.description }}
+                    {% if user.is_staff or user.id == comment.user.id %}
+                    <hr>
+                    <div class = "comment">
+                        <button><a href="{% url 'forum:delete_comment' comment_id=comment.id %}">DELETE</a> </button>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -2,48 +2,64 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="Main">
-        <title>Hear It Here</title>
-        <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HearItHere</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/2bc3780a18.js" crossorigin="anonymous"></script>
+</head>
 
-    <body>
-        <header>
-            {#Checks if user is authenticated and based on that it prints buttons#}
-            <nav>
-                {% if user.is_authenticated %}
-                    <a href="{% url 'account:logout' %}">Logout</a>
-                {% else %}
-                    <a href="{% url 'account:signup' %}">Sign Up</a>
-                    <a href="{% url 'account:login' %}">Login</a>
-                {% endif %}
+<body>
+    <header>
+        <div class = "navbar">
+            <nav class = "navigation hide" id = "navigation">
+                <ul class = "nav-list">
+                    <span class = "close-icon" onclick = "showIconBar()"><i class = "fa fa-close"></i></span>
+                    {% if user.is_authenticated %}
+                        <li class = "nav-item">
+                            <a href="{% url 'account:logout' %}">Logout</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href="{% url 'account:profile' username=user.username %}">Profile</a>
+                        </li>
+                    {% else %}
+                        <li class = "nav-item">
+                            <a href="{% url 'account:signup' %}">Sign Up</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href="{% url 'account:login' %}">Login</a>
+                        </li>
+                    {% endif %}
+                    <li class = "nav-item">
+                        <a href="{% url 'homepage:home' %}">Home</a>
+                    </li>
+                </ul>
             </nav>
+            <a href="#" class="bar-icon" id = "iconBar" onclick = "hideIconBar()"><i class = "fa fa-bars"></i></a>
+            <div class = "brand"> <img src="{% static 'images/logo.png' %}" alt="logo"> HearItHere</div>
 
-            <br><br>
+        </div>
 
-            <nav>
-                <div class = "navbar">
-                    <img src="{% static 'images/New_Project_1.png' %}" alt="logo">
-                    <ul>
-                        <li><a href="#" class="open-create-post">
-                            <ion-icon name="create-outline" class = "icons"></ion-icon>
-                        </a></li>
-                        <li><a href="##">
-                            <ion-icon name="chevron-down-outline" class = "icons"></ion-icon>
-                        </a></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+        <div class = "search-box">
+            <div>
+                <input type="text" name = "q" id = "" placeholder="search..." >
+                <button><i class  = "fa fa-search"></i></button>
+            </div>
+        </div>
+    </header>
 
-        <br><br><br>
-        {# This where the subclass manifests; make sure to call the block content #}
-        <main>
-            {% block content %}
-            {% endblock %}
-        </main>
-    </body>
+    {# This where the subclass manifests; make sure to call the block content #}
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <span>&copy; &nbsp; HearItHere</span>
+    </footer>
+    <script src="{% static 'code/main.js' %}"></script>
+</body>
 </html>

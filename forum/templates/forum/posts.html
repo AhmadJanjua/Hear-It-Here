@@ -1,49 +1,16 @@
 {% extends 'templates/base.html' %}
-{% load static %}
 {% block content %}
-<header>
-	<div class="container">
+    <div class = "container">
+        <div class = "navigate">
+            <span>  <a href="{% url 'homepage:home' %}">HearItHere - Forums >> {{ category.title }}</a></span>
+        </div>
+        {% if user.is_authenticated %}
+        <div class = "status">
+            <button>  <a href="{% url 'forum:create_post' category_id=category.id%}">Add Post</a></button>
+        </div>
+        {% endif %}
 
-		<div class="profile">
-
-            <h1 class="profile-user-name">{{ profile.user.username }}</h1>
-
-			<div class="profile-image">
-
-				<img src="{% static profile.image %}"
-                     alt="" height="80" width="auto">
-
-			</div>
-
-			<div class="profile-stats">
-                {% if profile.name.count != 0 %}
-                <b><span class="profile-stat-count">Name:</span> {{ profile.name }}</b>
-                {% endif %}
-                <br>
-                <b><span class="profile-stat-count">{{ posts.count }}</span> post(s)</b>
-
-
-			</div>
-
-			<div class="profile-bio">
-
-				<p><span class="profile-real-name">Bio:</span> {{ profile.bio }}</p>
-
-			</div>
-            {% if user.id == profile.user.id or user.is_staff %}
-            <div class="profile-user-settings">
-				<button class="btn profile-edit-btn"><a href="{% url 'account:update_profile' username=profile.user.username %}">
-                    Edit Profile</a></button>
-			</div>
-            {% endif %}
-		</div>
-	</div>
-
-</header>
-
-<main>
-
-	<div class = "posts-table">
+        <div class = "posts-table">
             <div class = "table-head">
                 <div class = "status">Status</div>
                 <div class = "subjects">Subjects</div>
@@ -61,14 +28,14 @@
                     <div class = "status"><i class="fa-solid fa-fire"></i></div>
                 {% endif %}
 
-                    <div class = "subjects"><a href="{% url 'forum:view_post' category_id=post.category.id post_id=post.id %}">
+                    <div class = "subjects"><a href="{% url 'forum:view_post' category_id=category.id post_id=post.id %}">
                         {{ post.title }}</a>
                     <br>
                     <span>Created by <b><a href="{% url 'account:profile' username=post.user.username %}">
                         {{ post.user.username }}</a></b></span>
                     {% if user.id == post.user.id or user.is_staff %}
                     <br>
-                    <span><button><a href="{% url 'forum:delete_post' category_id=post.category.id post_id=post.id %}">
+                    <span><button><a href="{% url 'forum:delete_post' category_id=category.id post_id=post.id %}">
                         Delete</a></button></span>
                     {% endif %}
                 </div>
@@ -89,7 +56,17 @@
             </div>
             {% endfor %}
         </div>
+    </div>
 
-</main>
-
+    <div class = "note">
+        <span>
+            <i class="fa-solid fa-face-sad-tear"></i> 0 Engagement Topic&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+        <span>
+            <i class="fa-solid fa-face-smile"></i> Good Engagement Topic&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+        <span>
+            <i class="fa-solid fa-fire"></i> High Engagement Topic&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+    </div>
 {% endblock %}

@@ -9,7 +9,7 @@ from django.contrib.auth.tokens import default_token_generator
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 
 from django.contrib.auth import login, logout
-
+from forum.models import Post
 from .forms import SignUpForm, UpdateProfileForm
 from .models import CustomUser, Profile
 
@@ -87,7 +87,8 @@ def to_profile(request):
 # make a simple view of the user's profile
 def profile(request, username):
     pf = get_object_or_404(Profile, user__username=username)
-    return render(request, 'profile/profile.html', {'profile': pf})
+    posts = Post.objects.filter(user__username=username).order_by('-time')
+    return render(request, 'profile/profile.html', {'profile': pf, 'posts': posts})
 
 
 # make a simple view of the user's profile

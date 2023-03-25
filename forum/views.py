@@ -1,13 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .models import Post, Category
+from .models import Post, Category, Comment
 from .forms import PostForm, CommentForm
-
-
-# passes all categories to the page and renders them
-def browse_categories(request):
-    categories = Category.objects.all()
-    return render(request, 'forum/categories.html', {'categories': categories})
 
 
 # create a post under a specific category
@@ -39,6 +33,13 @@ def delete_post(request, category_id, post_id):
         post.delete()
     return redirect('forum:posts', category_id=category_id)
 
+@login_required
+def delete_comment(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    if comment.user.id == request.user.id or request.user.is_staff:
+        comment.delete()
+    return redirect('forum:view_post', category_id=comment.post.category.id, post_id=comment.post.id)
+
 
 # browse the existing posts in a category
 def browse_posts(request, category_id):
@@ -47,13 +48,14 @@ def browse_posts(request, category_id):
     # get all posts by date they are made
     posts = Post.objects.filter(category_id=category_id).order_by('-time')
     # render all the images
-    return render(request, 'forum/all_posts.html', {'category': category, 'posts': posts})
+    return render(request, 'forum/posts.html', {'category': category, 'posts': posts})
 
 
 # view a post with the ability to comment if logged in
 def view_post(request, category_id, post_id):
     # find the object if it exists
     post = get_object_or_404(Post, id=post_id)
+    comments = Comment.objects.filter(post_id=post_id)
     if request.method == 'POST':
         # get the comment form
         form = CommentForm(request.POST)
@@ -69,4 +71,4 @@ def view_post(request, category_id, post_id):
     else:
         form = CommentForm()
     # render the post page
-    return render(request, 'forum/view_post.html', {'post': post, 'form': form})
+    return render(request, 'forum/detail.html', {'post': post, 'form': form, 'comments': comments})

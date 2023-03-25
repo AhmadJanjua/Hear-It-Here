@@ -4,10 +4,11 @@ from account.models import CustomUser
 
 # make category with a unique name
 class Category(models.Model):
-    description = models.CharField(max_length=50, unique=True, null=False)
+    title = models.CharField(max_length=50, unique=True, null=False)
+    content = models.CharField(max_length=500, null=True)
 
     def __str__(self):
-        return self.description
+        return self.title
 
 
 # Model the post object

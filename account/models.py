@@ -64,7 +64,7 @@ class Profile(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
     name = models.CharField(max_length=30, blank=True)
     bio = models.TextField(default='Hello, I am new', max_length=100, blank=True)
-    image = models.ImageField(default='pfp/default.png', upload_to='account/static/pfp', null=True)
+    image = models.ImageField(default='pfp/default.png', upload_to='pfp', null=True)
 
     def __str__(self):
         return self.user.username
