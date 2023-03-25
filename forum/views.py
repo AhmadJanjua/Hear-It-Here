@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
+
 from .models import Post, Category, Comment
 from .forms import PostForm, CommentForm
 
 
 # create a post under a specific category
-# needs the request and the category id
 @login_required
 def create_post(request, category_id):
     # get a category object using the id
@@ -13,6 +14,7 @@ def create_post(request, category_id):
     # check if the post form is submitted
     if request.method == 'POST':
         form = PostForm(request.POST)
+        # validate form, submit and redirect to post pages
         if form.is_valid():
             post = form.save(commit=False)
             post.user = request.user
@@ -26,18 +28,31 @@ def create_post(request, category_id):
     return render(request, 'forum/create_post.html', {'form': form, 'category': category})
 
 
+# Deletes a post if the user is a mod or the person logged in is the one deleting it
 @login_required
 def delete_post(request, category_id, post_id):
+    # get the post
     post = get_object_or_404(Post, id=post_id)
-    if post.user.id == request.user.id or request.user.is_staff:
+    # check permission
+    if post.user.id == request.user.id or request.user.is_mod:
         post.delete()
-    return redirect('forum:posts', category_id=category_id)
+    previous_url = request.META.get('HTTP_REFERER')
+    if previous_url:
+        return redirect(previous_url, )
+    else:
+        # reload the posts page
+        return redirect('forum:posts', category_id=category_id)
 
+
+# deletes a comment if the user is a moderator or if they made the comment
 @login_required
 def delete_comment(request, comment_id):
+    # get the comment object
     comment = get_object_or_404(Comment, id=comment_id)
-    if comment.user.id == request.user.id or request.user.is_staff:
+    # check permission
+    if comment.user.id == request.user.id or request.user.is_mod:
         comment.delete()
+    # redirect to the post where the comment was initially present
     return redirect('forum:view_post', category_id=comment.post.category.id, post_id=comment.post.id)
 
 
@@ -74,10 +89,15 @@ def view_post(request, category_id, post_id):
     return render(request, 'forum/detail.html', {'post': post, 'form': form, 'comments': comments})
 
 
+# Search for forums
 def search_forum(request):
+    # check if there was a form filled
     if request.method == "POST":
+        # check what was searched
         searched = request.POST['search_forum']
-        posts = Post.objects.filter(title__contains=searched)
+        # retrieve all matching posts
+        posts = Post.objects.filter(Q(title__contains=searched) | Q(user__username__contains=searched))
+        # display results
         return render(request, 'forum/search_forum.html', {'searched': searched, 'posts': posts})
-    else:
-        return render(request, 'forum/search_forum.html')
+    # pass a page regardless
+    return render(request, 'forum/search_forum.html')

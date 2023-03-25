@@ -1,8 +1,9 @@
 from django.urls import path, include
 from . import views
 
+# name the app
 app_name = 'account'
-
+# create the path to direct the inputs
 urlpatterns = [
     path('auth/', include('django.contrib.auth.urls')),
     path('signup/', views.signup, name='signup'),

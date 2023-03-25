@@ -26,7 +26,8 @@ class CustomUserManager(BaseUserManager):
     # Create a moderator class
     def create_moderator(self, email, username, password, birthday, **extra_fields):
         extra_fields.setdefault('is_active', True)
-        extra_fields.setdefault('is_staff', True)
+        extra_fields.setdefault('is_mod', True)
+        extra_fields.setdefault('is_staff', False)
         extra_fields.setdefault('is_superuser', False)
         return self.create_user(email, username, password, birthday, **extra_fields)
 
@@ -34,6 +35,7 @@ class CustomUserManager(BaseUserManager):
     def create_superuser(self, email, username, password, birthday=None, **extra_fields):
         extra_fields.setdefault('is_active', True)
         extra_fields.setdefault('is_staff', True)
+        extra_fields.setdefault('is_mod', True)
         extra_fields.setdefault('is_superuser', True)
         return self.create_user(email, username, password, birthday, **extra_fields)
 
@@ -49,6 +51,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     # have setting attributes
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
+    is_mod = models.BooleanField(default=False)
     # select the default login field
     USERNAME_FIELD = 'username'
     # identified what is required for in the database
@@ -60,8 +63,10 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         return self.username
 
 
+# create a profile model linked with a user
 class Profile(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
+    # includes optional fields that the user can set
     name = models.CharField(max_length=30, blank=True)
     bio = models.TextField(default='Hello, I am new', max_length=100, blank=True)
     image = models.ImageField(default='images/default.png', upload_to='images/', null=True)

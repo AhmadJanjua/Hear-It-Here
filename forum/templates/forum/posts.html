@@ -33,7 +33,7 @@
                     <br>
                     <span>Created by <b><a href="{% url 'account:profile' username=post.user.username %}">
                         {{ post.user.username }}</a></b></span>
-                    {% if user.id == post.user.id or user.is_staff %}
+                    {% if user.id == post.user.id or user.is_mod %}
                     <br>
                     <span><button><a href="{% url 'forum:delete_post' category_id=category.id post_id=post.id %}">
                         Delete</a></button></span>

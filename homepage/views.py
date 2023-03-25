@@ -6,7 +6,7 @@ from forum.models import Category
 def home_response(request):
     # get all categories
     categories = Category.objects.all()
-    # get total number of posts
+    # loop through and get total number of posts
     total = 0
     for category in categories:
         total += category.post_set.count()

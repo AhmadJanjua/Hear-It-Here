@@ -3,11 +3,10 @@ from django.core.mail import EmailMessage
 from django.shortcuts import render, reverse, get_object_or_404, redirect
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes, force_str
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
 from django.contrib.sites.shortcuts import get_current_site
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-
 from django.contrib.auth import login, logout
 from forum.models import Post
 from .forms import SignUpForm, UpdateProfileForm
@@ -97,7 +96,7 @@ def update_profile(request, username):
     # Retrieve the model instance to be updated
     pf = get_object_or_404(Profile, user__username=username)
 
-    if pf.user.id == request.user.id or request.user.is_staff:
+    if pf.user.id == request.user.id or request.user.is_mod:
         if request.method == 'POST':
             # Create a form instance with the submitted data
             form = UpdateProfileForm(request.POST, request.FILES, instance=pf)

@@ -29,7 +29,7 @@
 				<p><span class="profile-real-name">Bio:</span> {{ profile.bio }}</p>
 
 			</div>
-            {% if user.id == profile.user.id or user.is_staff %}
+            {% if user.id == profile.user.id or user.is_mod %}
             <div class="profile-user-settings">
 				<button class="btn profile-edit-btn"><a href="{% url 'account:update_profile' username=profile.user.username %}">
                     Edit Profile</a></button>
@@ -65,7 +65,7 @@
                     <br>
                     <span>Created by <b><a href="{% url 'account:profile' username=post.user.username %}">
                         {{ post.user.username }}</a></b></span>
-                    {% if user.id == post.user.id or user.is_staff %}
+                    {% if user.id == post.user.id or user.is_mod %}
                     <br>
                     <span><button><a href="{% url 'forum:delete_post' category_id=post.category.id post_id=post.id %}">
                         Delete</a></button></span>

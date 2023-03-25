@@ -12,5 +12,6 @@ urlpatterns = [
     path('forum/', include('forum.urls')),
 ]
 
+# code to set up where to load images from
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

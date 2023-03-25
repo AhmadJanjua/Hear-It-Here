@@ -13,6 +13,7 @@ class SignUpForm(UserCreationForm):
         fields = ('email', 'username', 'password1', 'password2', 'birthday')
 
 
+# form to update the profile information
 class UpdateProfileForm(forms.ModelForm):
 
     class Meta:
