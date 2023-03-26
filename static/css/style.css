@@ -315,7 +315,7 @@ header .search {
     flex-direction: column;
     background: #111314;
     width: 100%;
-    height: calc(230px);
+    height: 400px;
     padding: 40px;
     border-top: 1px solid #fff;
     z-index: 20;
