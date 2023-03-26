@@ -351,7 +351,7 @@ header .search {
   }
   
   footer{
-    margin-top: auto;
+    margin-top: 30px;
     padding: 20px;
     background-color: black;
     text-align: center;
@@ -359,7 +359,7 @@ header .search {
 
   .footer-bottom {
     bottom: 0 !important;
-    position: absolute;
+    position: relative;
     width: 100%;
   }
 
@@ -781,8 +781,11 @@ header .search {
   border-bottom: 1px solid #fff;
   }
   
-  button[type="submit"] {
-    display: none;
+  .submit-btns {
+    color: #111314;
+    background: white;
+    width: 80px;
+    height: 40px;
   }
   
   .passReq {
