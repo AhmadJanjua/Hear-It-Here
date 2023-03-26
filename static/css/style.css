@@ -1,25 +1,17 @@
-/* Global */
-
-@font-face {
-  font-family: 'Rubik' ;
-  src: url(../code/Rubik-VariableFont_wght.ttf);
-}
-
-@font-face {
-  font-family: 'Title' ;
-  src: url(../code/LilitaOne-Regular.ttf);
-}
-
 *{
   box-sizing: content-box ;
 }
 
 html{
   font-size: 14px;
-  font-family: 'Rubik', sans-serif;
   background: rgb(2, 41, 48) 100%;
   color: #fff;
 }
+
+body {
+    font-family: 'Poppins';
+}
+
 
 a{
   color: lightblue;
@@ -44,10 +36,11 @@ h1{
 }
 
 .subforum-title{
-  background-color: teal;
+background: conic-gradient(at top right, lime, cyan);
   padding: 5px;
   border-radius: 5px;
   margin: 4px;
+  color: black;
 }
 
 .subforum-description{
@@ -64,6 +57,31 @@ h1{
   margin: 4px;
   border-radius: 5px;
   background-color: #111314;
+}
+
+.subforum-description h1 a {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.subforum-description h1 a::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    background: #40E0D0;
+    transition: width 0.25s ease-out;
+}
+
+.subforum-description h1 a:hover::before {
+    width: 100%;
+}
+
+.subforum-description h1 a:hover {
+    color: #40E0D0;
 }
 
 .center{
@@ -141,8 +159,8 @@ header{
 
 .navigation{
   background-color: transparent;
-  padding: 10px;
-  width: 65%;
+  /* padding: 10px; */
+  width: 100%;
   display: inline-block;
   border-radius: 5px;
   max-height: 80px;
@@ -156,12 +174,11 @@ header{
 }
 
 .nav-item a{
-  float: left;
+  float: right;
   display: block;
   text-align: center;
-  margin-inline: 20px;
-  font-size: 20px;
-  padding: 10px;
+  font-size: 18px;
+  margin: 0 10px;
   color: white;
 }
 
@@ -176,9 +193,9 @@ header{
 
 }
 
-.hide{
+/* .hide{
   display: none;
-}
+} */
 
 .bar-icon{
   font-size:60px;
@@ -190,16 +207,11 @@ header{
 }
 
 .brand{
-  font-size: 60px;
+  font-size: 30px;
   display: inline-block;
-  font-family: 'Title', sans-serif;
   color: #fff;
-  /* put in top center of page */
   position: absolute;
-  top: 5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
+  top: 2%;
 }
 
 @media screen and (max-width: 460px) {
@@ -227,8 +239,6 @@ header{
   .brand{
       font-size: 20px;
       display: inline-block;
-      font-family: 'Title', sans-serif;
-      
   }
 
 
@@ -478,7 +488,6 @@ display: flex;
 align-items: center;
 justify-content: center;
 margin-bottom: 50px;
-font-family: "Work Sans", sans-serif;
 transition: all 0.5s ease-in-out;
 outline: none;
 /* move to center */
