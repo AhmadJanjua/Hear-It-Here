@@ -1,0 +1,63 @@
+{% extends "templates/base.html" %} {% block content %} {% load static %}
+
+<div class="tinder">
+    <div class="tinder--status">
+        <i class="fa fa-remove"></i>
+        <i class="fa fa-heart"></i>
+    </div>
+
+    <div class="tinder--cards">
+        <div class="tinder--card">
+            <img
+                src="https://images.genius.com/deca44fb8344d17dc683a285c1ad8e1a.800x800x1.jpg"
+            />
+            <h3 class="album">Nas - Illmatic</h3>
+            <p>
+                Often cited as one of the best hip-hop albums of the '90s,
+                Illmatic is a hardcore hip hop album with multi-syllabic
+                internal rhymes and inner-city narratives. Notable songs include
+                “It Ain’t Hard to Tell,” “The World is Yours,” “One Love,”
+                “Halftime,” and “Life’s a Bitch.”
+            </p>
+        </div>
+        <div class="tinder--card">
+            <img
+                src="https://media.pitchfork.com/photos/5929ad4cea9e61561daa60ba/1:1/w_600/d47a5880.jpg"
+            />
+            <h3>Kendrick Lamar - To Pimp a Butterfly</h3>
+            <p>
+                A staple of modern hip hop, To Pimp a Butterfly is incorporates
+                jazz, funk, and soul. It is Kendrick Lamar’s third studio album.
+                Notable songs include “King Kunta,” “Alright,” “These Walls,”
+                “I,” and “The Blacker the Berry.”
+            </p>
+        </div>
+        <div class="tinder--card">
+            <img
+                src="https://i0.wp.com/bydik.com/wp-content/uploads/2018/01/holy-al-quran-8973-e1664452257199.jpg?fit=1000%2C550&ssl=1"
+            />
+            <h3>Quran</h3>
+            <p>Mashallah Brother</p>
+        </div>
+        <div class="tinder--card">
+            <img
+                src="http://www.beautifulsongoftheweek.com/wp-content/uploads/2013/11/duke-ellington-and-john-coltrane.jpg"
+            />
+            <h3>Album</h3>
+            <p>description</p>
+        </div>
+    </div>
+
+    <div class="tinder--buttons">
+        <button id="nope">
+            <i class="fa fa-remove"></i><box-icon name="x"></box-icon>
+        </button>
+        <button id="love">
+            <i class="fa fa-heart"></i><box-icon name="heart"></box-icon>
+        </button>
+    </div>
+</div>
+
+<script src="{% static 'code/hammer.min.js' %}"></script>
+<script src="{% static 'code/card.js' %}"></script>
+{% endblock %}

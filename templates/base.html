@@ -2,69 +2,92 @@
 
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image" href="media/images/HearitHere_Logo.png" />
+        <title>Hear It Here</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Poppins"
+            rel="stylesheet"
+        />
+        <script
+            src="https://kit.fontawesome.com/2bc3780a18.js"
+            crossorigin="anonymous"
+        ></script>
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image" href="media/images/HearitHere_Logo.png">
-    <title>Hear It Here</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <script src="https://kit.fontawesome.com/2bc3780a18.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-    <header>
-        <a href="#" class="logo">Hear It Here</a>
-        <div class="nav-bar">
-            <ul class="nav-list">
-                <li>
-                    <a class="nav-items" href="{% url 'homepage:home' %}">Home</a>
-                </li>
-                <li>
-                    <a class="nav-items" href="#">About</a>
-                </li>
-                <li>
-                    <a class="nav-items" href="#">Genre</a>
-                </li>
-                {% if user.is_authenticated %}
-                <li>
-                    <a class="nav-items" href="{% url 'account:logout' %}">Logout</a>
-                </li>
-                <li>
-                    <a class="nav-items" href="{% url 'account:profile' username=user.username %}">Profile</a>
-                </li>
-                {% else %}
-                <li>
-                    <a class="nav-items" href="{% url 'account:login' %}">Login</a>
-                </li>
-                <li>
-                    <a class="nav-items" href="{% url 'account:signup' %}">Sign Up</a>
-                </li>
-                {% endif %}
-            </ul>
-            <div class="search">
-                <span class="icon">
-                    <ion-icon name="search" class="searchBtn"></ion-icon>
-                    <ion-icon name="close" class="closeBtn"></ion-icon>
-                </span>
+    <body>
+        <header>
+            <a href="#" class="logo">Hear It Here</a>
+            <div class="nav-bar">
+                <ul class="nav-list">
+                    <li>
+                        <a class="nav-items" href="{% url 'homepage:home' %}"
+                            >Home</a
+                        >
+                    </li>
+                    <li>
+                        <a class="nav-items" href="#">About</a>
+                    </li>
+                    <li>
+                        <a class="nav-items" href="{% url 'account:genre'%}"
+                            >Genre</a
+                        >
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a class="nav-items" href="{% url 'account:logout' %}"
+                            >Logout</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            class="nav-items"
+                            href="{% url 'account:profile' username=user.username %}"
+                            >Profile</a
+                        >
+                    </li>
+                    {% else %}
+                    <li>
+                        <a class="nav-items" href="{% url 'account:login' %}"
+                            >Login</a
+                        >
+                    </li>
+                    <li>
+                        <a class="nav-items" href="{% url 'account:signup' %}"
+                            >Sign Up</a
+                        >
+                    </li>
+                    {% endif %}
+                </ul>
+                <div class="search">
+                    <span class="icon">
+                        <ion-icon name="search" class="searchBtn"></ion-icon>
+                        <ion-icon name="close" class="closeBtn"></ion-icon>
+                    </span>
+                </div>
+                <ion-icon name="menu" class="menuToggle"></ion-icon>
             </div>
-            <ion-icon name="menu" class="menuToggle"></ion-icon>
-        </div>
-        <div class="searchBox">
-            <input type="text" placeholder="Search">
-        </div>
-    </header> 
-    <br><br><br>
-    <br><br><br>
-    {% comment %} {# This where the subclass manifests; make sure to call
-    the block content #} {% endcomment %}
-    <main>{% block content %} {% endblock %}</main>
+            <div class="searchBox">
+                <input type="text" placeholder="Search" />
+            </div>
+        </header>
+        <br /><br /><br />
+        <br /><br /><br />
+        {% comment %} {# This where the subclass manifests; make sure to call
+        the block content #} {% endcomment %}
+        <main>{% block content %} {% endblock %}</main>
 
-    <!-- <footer class="footer-bottom">
+    <footer class="footer-bottom">
         <span>&copy; &nbsp; Hear It Here</span>
-    </footer> -->
+    </footer> 
 
 
     <script src="{% static 'code/main.js' %}"></script>
@@ -73,4 +96,17 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
+        <script src="{% static 'code/main.js' %}"></script>
+        <script>
+            navBar();
+        </script>
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+    </body>
 </html>

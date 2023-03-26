@@ -64,7 +64,7 @@ def activate(request, uidb64, token):
         uid = force_str(urlsafe_base64_decode(uidb64))
         user = CustomUser.objects.get(pk=uid)
     # if there are errors or the user doesn't exist, set user to None
-    except(TypeError, ValueError, OverflowError, CustomUser.DoesNotExist):
+    except (TypeError, ValueError, OverflowError, CustomUser.DoesNotExist):
         user = None
     # Make sure the token is valid
     if user is not None and default_token_generator.check_token(user, token):
@@ -115,6 +115,5 @@ def update_profile(request, username):
         return render(request, 'profile/update_profile.html', {'form': form, 'username': username})
 
 
-
-
-
+def genre_view(request):
+    return render(request, 'profile/genre.html')

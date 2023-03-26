@@ -104,3 +104,4 @@ function navBar() {
     searchBtn.classList.remove('active');
   }
 }
+
