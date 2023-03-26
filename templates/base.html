@@ -7,7 +7,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HearItHere</title>
+    <link rel="icon" type="image" href="media/images/HearitHere_Logo.png">
+    <title>Hear It Here</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/2bc3780a18.js" crossorigin="anonymous"></script>
@@ -18,6 +19,12 @@
         <a href="#" class="logo">Hear It Here</a>
         <div class="nav-bar">
             <ul class="nav-list">
+                <li>
+                    <a class="nav-items" href="{% url 'homepage:home' %}">Home</a>
+                </li>
+                <li>
+                    <a class="nav-items" href="#">About</a>
+                </li>
                 {% if user.is_authenticated %}
                 <li>
                     <a class="nav-items" href="{% url 'account:logout' %}">Logout</a>
@@ -33,9 +40,6 @@
                     <a class="nav-items" href="{% url 'account:signup' %}">Sign Up</a>
                 </li>
                 {% endif %}
-                <li>
-                    <a class="nav-items" href="{% url 'homepage:home' %}">Home</a>
-                </li>
             </ul>
             <div class="search">
                 <span class="icon">
@@ -55,9 +59,11 @@
     the block content #} {% endcomment %}
     <main>{% block content %} {% endblock %}</main>
 
-    <footer>
+    <footer class="footer-bottom">
         <span>&copy; &nbsp; Hear It Here</span>
     </footer>
+
+
     <script src="{% static 'code/main.js' %}"></script>
     <script>navBar();</script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

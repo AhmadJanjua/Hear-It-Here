@@ -230,7 +230,7 @@ header .search {
     width: 100%;
     height: 100%;
     display: flex;
-    background: black;
+    background: #111314;
     align-items: center;
     padding: 0 30px;
     transition: 0.5s ease-in-out;
@@ -238,7 +238,7 @@ header .search {
 
 .searchBox.active {
     right: 0;
-    background: black;
+    background: #111314;
 }
 
 .searchBox input {
@@ -247,16 +247,11 @@ header .search {
     height: 50px;
     color:#fff;
     font-size: 18em;
-    background: black;
+    background: #111314;
 }
 
 .searchBox input::placeholder {
     color: #fff;
-}
-
-.searchBox input:focus {
-    border-color: #40E0D0;
-    outline: 2px solid green;
 }
 
 .searchBtn {
@@ -318,11 +313,12 @@ header .search {
     top: 80px;
     display: flex;
     flex-direction: column;
-    background: #fff;
+    background: #111314;
     width: 100%;
-    height: calc(100vh - 80px);
+    height: calc(230px);
     padding: 40px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-top: 1px solid #fff;
+    z-index: 20;
    }
 
    header.open .nav-list li a {
@@ -338,43 +334,6 @@ header .search {
 
 #searcher{
     border-radius: 20px;
-    
-  
-  }
-  .search-box{
-    margin-top: 20px;
-    padding: 40px;
-    display: flex;
-    justify-content: center;
-    
-  }
-  
-  .search-box select{
-    padding: 10px;
-  }
-  
-  .search-box input{
-    padding: 10px;
-    width: 400px;
-  }
-  
-  .search-box button{
-    padding: 10px;
-    background-color: black;
-  }
-  
-  .search-box button:hover{
-    background-color: black;
-    color: white;
-    box-shadow: 1px 2px 3px white;
-  }
-
-  @media screen and (max-width: 460px) {
-    .search-box input, .search-box button, .search-box select{
-        min-width: 300px;
-        margin-top: 5px;   
-    }
-  
   }
 
   .forum-info{
@@ -392,6 +351,12 @@ header .search {
     padding: 20px;
     background-color: black;
     text-align: center;
+  }
+
+  .footer-bottom {
+    bottom: 0 !important;
+    position: relative;
+    width: 100%;
   }
 
   /* ############################## */
@@ -838,7 +803,7 @@ header .search {
     opacity: 1;
   }
   }
-  /* ----------------------- utility classes */
+
   .top-left {
   position: absolute;
   top: 30px;
@@ -855,21 +820,23 @@ header .search {
   }
   
   input[type="text"], input[type="password"], input[type="email"], textarea {
-  border: 1px solid #ccc;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  /* move to center */
-  display: block;
-  margin: 0 auto;
-  
-  
+    border-bottom: 1px solid #fff;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
   }
   
   input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
   outline: none;
-  border-color: blue;
-  box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid #fff;
   }
   
   button[type="submit"] {
@@ -878,7 +845,6 @@ header .search {
   
   .passReq {
     text-align: center;
-    /* get rid of bullet points */
     list-style:none;
     font-size: large;
     font-style: italic;
