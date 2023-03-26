@@ -1,17 +1,17 @@
-*{
-  box-sizing: content-box ;
-}
-
-html{
-  font-size: 14px;
-  background: rgb(2, 41, 48) 100%;
-  color: #fff;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
+    background: #fff;
     font-family: 'Poppins';
+    min-height: 100vh;
+    background: rgb(2, 41, 48) 100%;
+    overflow-x: hidden;
+    color: #fff;
 }
-
 
 a{
   color: lightblue;
@@ -20,775 +20,866 @@ a{
 }
 
 h1{
-  font-size: 20px;
-  font-weight: bolder;
-}
+    font-size: 20px;
+    font-weight: bolder;
+  }
 
-/* Home Page */
+/* --------- Home Page ---------- */
 
 .container{
-  margin: 20px;
-  padding: 20px;
-}
-
-.subforum{
-  margin-top: 20px;
-}
-
-.subforum-title{
-background: conic-gradient(at top right, lime, cyan);
-  padding: 5px;
-  border-radius: 5px;
-  margin: 4px;
-  color: black;
-}
-
-.subforum-description{
-  margin-block: 0;
-}
-
-.subforum-row{
-  display: grid;
-  grid-template-columns: 7% 60% 13% 20%
-}
-
-.subforum-column{
-  padding: 10px;
-  margin: 4px;
-  border-radius: 5px;
-  background-color: #111314;
-}
-
-.subforum-description h1 a {
-    display: inline-block;
-    position: relative;
-    padding-bottom: 2px;
-}
-
-.subforum-description h1 a::before {
-    content: "";
-    position: absolute;
-    height: 2px;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    background: #40E0D0;
-    transition: width 0.25s ease-out;
-}
-
-.subforum-description h1 a:hover::before {
-    width: 100%;
-}
-
-.subforum-description h1 a:hover {
-    color: #40E0D0;
-}
-
-.center{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.subforum-icon{
-  font-size: 45px;
-}
-
-.subforum-divider{
-  display: none;
-}
-
-/*Tablets */
-@media screen and  (max-width: 460px) and (max-width: 1024px){
-  .container{
-      margin: 15px;
-      padding: 15px;
+    margin: 20px;
+    padding: 20px;
   }
-  .subforum-row{
-      display: grid;
-      grid-template-columns: 10% 60% 10% 20%;
+  
+  .subforum{
+    margin-top: 20px;
   }
-  .subforum-icon{
-      font-size: 35px;
+  
+  .subforum-title{
+  background: conic-gradient(at top right, lime, cyan);
+    padding: 5px;
+    border-radius: 5px;
+    margin: 4px;
+    color: black;
   }
-  html{
-      font-size: 16px;
+  
+  .subforum-description{
+    margin-block: 0;
   }
-  h1{
-      font-size: 18px;
-  }
-}
-
-@media screen and (max-width: 460px) {
-
-  .container{
-      margin: 15px;
-      padding: 15px;
-  }
-
   
   .subforum-row{
-      display: grid;
-      grid-template-columns: 25% 75%;
-      grid-template-rows: 65% 35%;
-  }
-
-  .subforum-stats{
-      font-size: 12px;
-  }
-
-  .subforum-divider{
-      display: block;
-      border: 0;
-      height: 1px;
-      background-image: linear-gradient(to right, rgba(190, 190, 190, 0), rgba(255,255,255, 0.75), rgba(190,190,190, 0));
-  }
-
-}
-
-/* Navbar */
-
-header{
-  margin-inline: flex;
-}
-
-.navbar{
-  display: list-item;
-  align-items: center;
-}
-
-.navigation{
-  background-color: transparent;
-  /* padding: 10px; */
-  width: 100%;
-  display: inline-block;
-  border-radius: 5px;
-  max-height: 80px;
-  margin-right: 10px;
-}
-
-.nav-list{
-  list-style-type: none;
-  overflow: hidden;
-  color: #2BCB96;
-}
-
-.nav-item a{
-  float: right;
-  display: block;
-  text-align: center;
-  font-size: 18px;
-  margin: 0 10px;
-  color: white;
-}
-
-.nav-item a:hover{
-  background-color: rgb(0,0,0,0.1);
-}
-
-.close-icon i{
-  font-size: 40px;
-  float: left;
-  cursor: pointer;
-
-}
-
-/* .hide{
-  display: none;
-} */
-
-.bar-icon{
-  font-size:60px;
-  display: inline-block;
-  margin-right: 10px;
-  color: white;
-  cursor: pointer;
-  /* background-color: transparent; */
-}
-
-.brand{
-  font-size: 30px;
-  display: inline-block;
-  color: #fff;
-  position: absolute;
-  top: 2%;
-}
-
-@media screen and (max-width: 460px) {
-   
-  .navigation{
-      max-height: min-content;
-  }
-
-  
-  .nav-item a{
-      float: left;
-      display: inline;
-      text-align: center;
-      margin-inline: 3px;
-      font-size: 10px;
-      padding: 5px;
-  }
-
-    
-  .close-icon i{
-      font-size: 20px;
+    display: grid;
+    grid-template-columns: 7% 60% 13% 20%
   }
   
+  .subforum-column{
+    padding: 10px;
+    margin: 4px;
+    border-radius: 5px;
+    background-color: #111314;
+  }
   
-  .brand{
-      font-size: 20px;
+  .subforum-description h1 a {
       display: inline-block;
+      position: relative;
+      padding-bottom: 2px;
+  }
+  
+  .subforum-description h1 a::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      background: #40E0D0;
+      transition: width 0.25s ease-out;
+  }
+  
+  .subforum-description h1 a:hover::before {
+      width: 100%;
+  }
+  
+  .subforum-description h1 a:hover {
+      color: #40E0D0;
+  }
+  
+  .center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .subforum-icon{
+    font-size: 45px;
+  }
+  
+  .subforum-divider{
+    display: none;
   }
 
+  @media screen and (max-width: 460px) and (max-width: 1024px){
+    .container{
+        margin: 15px;
+        padding: 15px;
+    }
+    .subforum-row{
+        display: grid;
+        grid-template-columns: 10% 60% 10% 20%;
+    }
+    .subforum-icon{
+        font-size: 35px;
+    }
+    html{
+        font-size: 16px;
+    }
+    h1{
+        font-size: 18px;
+    }
+  }
 
+  @media screen and (max-width: 460px) {
+
+    .container{
+        margin: 15px;
+        padding: 15px;
+    }
+  
+    
+    .subforum-row{
+        display: grid;
+        grid-template-columns: 25% 75%;
+        grid-template-rows: 65% 35%;
+    }
+  
+    .subforum-stats{
+        font-size: 12px;
+    }
+  
+    .subforum-divider{
+        display: block;
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(190, 190, 190, 0), rgba(255,255,255, 0.75), rgba(190,190,190, 0));
+    }
+  
+  }
+
+/* --------- Navigation Bar ---------- */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #111314;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
 }
+
+.logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.nav-items {
+    color: #fff;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+}
+
+header ul {
+    position: relative;
+    display: flex;
+    gap: 30px;
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul li a {
+    position: relative;
+    text-decoration: none;
+    font-size: 1em;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+header ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: #40E0D0;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+    transform-origin: right;
+}
+
+header ul li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+header .search {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.searchBox {
+    position: absolute;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: black;
+    align-items: center;
+    padding: 0 30px;
+    transition: 0.5s ease-in-out;
+}
+
+.searchBox.active {
+    right: 0;
+    background: black;
+}
+
+.searchBox input {
+    width: 100%;
+    outline: none;
+    height: 50px;
+    color:#fff;
+    font-size: 18em;
+    background: black;
+}
+
+.searchBox input::placeholder {
+    color: #fff;
+}
+
+.searchBox input:focus {
+    border-color: #40E0D0;
+    outline: 2px solid green;
+}
+
+.searchBtn {
+    position: relative;
+    left: 30px;
+    top: 2.5px;
+    transition: 0.5s ease-in-out;
+}
+
+.searchBtn.active {
+    left: 0;
+}
+
+.closeBtn {
+    opacity: 0;
+    visibility: hidden;
+    scale: 0;
+    transition: 0.5s;
+    color: #fff;
+}
+
+.closeBtn.active {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s;
+    scale: 1;
+}
+
+.menuToggle {
+    position: relative;
+    display: none;
+}
+
+@media (max-width: 800px) {
+    header .nav-list {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        left: 100%;
+   }   
+
+   .menuToggle {
+    position: absolute;
+    display: block;
+    font-size: 2em;
+    cursor: pointer;
+    transform: translateX(30px);
+    z-index: 10;
+   }
+
+   .searchBtn {
+    left: 0;
+   }
+
+   header.open .nav-list {
+    opacity: 1;
+    visibility: visible;
+    left: 0;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    width: 100%;
+    height: calc(100vh - 80px);
+    padding: 40px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+   }
+
+   header.open .nav-list li a {
+    font-size: 1.25em;
+    }
+
+    .hide {
+        display: none;
+    }
+}
+
+/* --------- CHECK IF NEEDED ---------- */
+
 #searcher{
-  border-radius: 20px;
+    border-radius: 20px;
+    
   
-
-}
-.search-box{
-  margin-top: 20px;
-  padding: 40px;
-  display: flex;
-  justify-content: center;
+  }
+  .search-box{
+    margin-top: 20px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    
+  }
   
-}
-
-.search-box select{
-  padding: 10px;
-}
-
-.search-box input{
-  padding: 10px;
-  width: 400px;
-}
-
-.search-box button{
-  padding: 10px;
-  background-color:  white;
-  color: black;
-}
-
-.search-box button:hover{
-  background-color: black;
-  color: white;
-  box-shadow: 1px 2px 3px white;
-}
-
-@media screen and (max-width: 460px) {
-  .search-box input, .search-box button, .search-box select{
-      min-width: 300px;
-      margin-top: 5px;   
+  .search-box select{
+    padding: 10px;
+  }
+  
+  .search-box input{
+    padding: 10px;
+    width: 400px;
+  }
+  
+  .search-box button{
+    padding: 10px;
+    background-color: black;
+  }
+  
+  .search-box button:hover{
+    background-color: black;
+    color: white;
+    box-shadow: 1px 2px 3px white;
   }
 
-}
+  @media screen and (max-width: 460px) {
+    .search-box input, .search-box button, .search-box select{
+        min-width: 300px;
+        margin-top: 5px;   
+    }
+  
+  }
 
-.forum-info{
-  padding: 20px;
-  background-color: #111314;
-}
+  .forum-info{
+    padding: 20px;
+    background-color: #111314;
+  }
+  
+  .chart{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  footer{
+    margin-top: 20px;
+    padding: 20px;
+    background-color: black;
+    text-align: center;
+  }
 
-.chart{
-  font-size: 20px;
-  font-weight: bold;
-}
+  /* ############################## */
 
-footer{
-  margin-top: 20px;
-  padding: 20px;
-  background-color: black;
-  text-align: center;
-}
+  .table-head{
+    display: flex;
+  }
+  
+  .table-head div{
+    padding: 5px;
+    margin: 2px;
+    background-color: rgb(97, 94, 94);
+    font-weight: bold;
+  }
+  
+  .table-head .status{
+    flex: 5%;
+  }
+  
+  .table-head .subjects{
+    flex: 70%;
+  }
+  
+  .table-head .replies{
+    flex: 10%;
+  }
+  
+  .table-head .last-reply{
+    flex: 15%;
+  }
+  
+  .table-row{
+    display: flex;
+  }
+  
+  .table-row {
+    display: flex;
+  }
+  
+  .table-row .status, .table-row .subjects, .table-row .replies,  .table-row .last-reply{
+    padding: 5px;
+    margin: 2px;
+    background-color: #111314;
+  }
+  
+  .table-row .status{
+    flex: 5%;
+    font-size:  30px;
+    text-align: center;
+  }
+  
+  .table-row .subjects{
+    flex: 70%;
+  
+  }
+  
+  .table-row .replies{
+    flex: 10%;
+  }
+  
+  .table-row .last-reply{
+    flex: 15%;
+  }
+  
+  .pagination{
+    padding: 20px;
+    font-size:  15px;
+  }
+  
+  .pagination a{
+    color: white;
+    margin-inline: 5px;
+    padding: 5px 10px;
+    border: solid 0.5px white;
+  }
+  
+  .pagination a:hover{
+    opacity: 0.5;
+  }
+  
+  .navigate{
+    margin-block: 20px;
+    font-weight: lighter;
+    font-size: 24px;
+  }
+  
+  .navigate a{
+    color: #ffff;
+    font-weight: bolder;
+  }
+  
+  .note{
+    background-color: gray;
+    padding: 20px;
+    display: block;
+  }
+  
+  .note span{
+    font-size: 20px;
+    margin-block: 5px;
+  }
+  
+  /* #################################### */
 
-/* ############################## */
-
-.table-head{
+  .head{
+    display: flex;
+    background-color: grey;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  
+  .authors{
+    flex: 20%;
+  }
+  
+  .content{
+    flex: 80%;
+  }
+  
+  .body{
+    display: flex;
+    background-color: gray;
+    padding: 10px;
+    margin-top: 5px;
+  }
+  
+  .body .authors .username{
+    font-size: 10px;
+  }
+  
+  .body .authors img{
+    max-width: 50px;
+    max-height: 80px;
+  
+  }
+  
+  .body .content .comment button{
+    border: none;
+    padding: 10px;
+    font-weight: bolder;
+    box-shadow: 4px 6px rgb(65, 64, 64);
+    cursor: pointer;
+    float: right;
+  }
+  
+  /* comment */
+  
+  .comment-area{
+    margin-top: 50px;
+  }
+  
+  .comment-area textarea{
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    margin-block: 10px;
+  }
+  
+  .comment-area input{
+    float: right;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .comment-area input:hover{
+    border: solid 1px black;
+  }
+  
+  .comments-container{
+    margin-top: 50px;
+  }
+  
+  .login-h{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 50px;
+  }
+  
+  
+  .btn {
+  position: relative;
   display: flex;
-}
-
-.table-head div{
-  padding: 5px;
-  margin: 2px;
-  background-color: rgb(97, 94, 94);
-  font-weight: bold;
-}
-
-.table-head .status{
-  flex: 5%;
-}
-
-.table-head .subjects{
-  flex: 70%;
-}
-
-.table-head .replies{
-  flex: 10%;
-}
-
-.table-head .last-reply{
-  flex: 15%;
-}
-
-.table-row{
-  display: flex;
-}
-
-.table-row {
-  display: flex;
-}
-
-.table-row .status, .table-row .subjects, .table-row .replies,  .table-row .last-reply{
-  padding: 5px;
-  margin: 2px;
-  background-color: #111314;
-}
-
-.table-row .status{
-  flex: 5%;
-  font-size:  30px;
-  text-align: center;
-}
-
-.table-row .subjects{
-  flex: 70%;
-
-}
-
-.table-row .replies{
-  flex: 10%;
-}
-
-.table-row .last-reply{
-  flex: 15%;
-}
-
-.pagination{
-  padding: 20px;
-  font-size:  15px;
-}
-
-.pagination a{
-  color: white;
-  margin-inline: 5px;
-  padding: 5px 10px;
-  border: solid 0.5px white;
-}
-
-.pagination a:hover{
-  opacity: 0.5;
-}
-
-.navigate{
-  margin-block: 20px;
-  font-weight: lighter;
-  font-size: 24px;
-}
-
-.navigate a{
-  color: #ffff;
-  font-weight: bolder;
-}
-
-.note{
-  background-color: gray;
-  padding: 20px;
-  display: block;
-}
-
-.note span{
-  font-size: 20px;
-  margin-block: 5px;
-}
-
-/* #################################### */
-
-.head{
-  display: flex;
-  background-color: grey;
-  padding: 5px;
-  font-weight: bold;
-  font-size: 15px;
-}
-
-.authors{
-  flex: 20%;
-}
-
-.content{
-  flex: 80%;
-}
-
-.body{
-  display: flex;
-  background-color: gray;
-  padding: 10px;
-  margin-top: 5px;
-}
-
-.body .authors .username{
-  font-size: 10px;
-}
-
-.body .authors img{
-  max-width: 50px;
-  max-height: 80px;
-
-}
-
-.body .content .comment button{
-  border: none;
-  padding: 10px;
-  font-weight: bolder;
-  box-shadow: 4px 6px rgb(65, 64, 64);
-  cursor: pointer;
-  float: right;
-}
-
-/* comment */
-
-.comment-area{
-  margin-top: 50px;
-}
-
-.comment-area textarea{
-  width: 100%;
-  min-height: 100px;
-  padding: 10px;
-  margin-block: 10px;
-}
-
-.comment-area input{
-  float: right;
-  padding: 10px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.comment-area input:hover{
-  border: solid 1px black;
-}
-
-.comments-container{
-  margin-top: 50px;
-}
-
-.login-h{
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  margin-top: 50px;
-}
-
-
-.btn {
-position: relative;
-display: flex;
-align-items: center;
-justify-content: center;
-margin-bottom: 50px;
-transition: all 0.5s ease-in-out;
-outline: none;
-/* move to center */
-margin-left: auto;
-margin-right: auto;
-width: 100px;
-height: 60px;
-
-}
-
-.btn-lg {
-width: 100px;
-height: 60px;
-border: 5px solid;
-border-radius: 60px;
-font-size: large;
-font-weight: 600;
-letter-spacing: 1.5px;
-}
-
-.btn-sm {
-width: 10px;
-height: 40px;
-border: none;
-border-radius: 3px;
-font-size: 16px;
-}
-
-.btn-green {
-
-color: #2BCB96;
-background: white;
-border-color: #2BCB96;
-}
-.btn-green:hover {
-color: white;
-background: #2BCB96;
-}
-
-.btn-black {
-color: white;
-background: darkgray;
-}
-.btn-black:hover {
-background: black;
-}
-
-/* --------------------------------- timer */  
-.timer {
-position: absolute;
-left: calc(50% - 120px/2);
-width: 120px;
-height: 120px;
-opacity: 0;
-}
-.timer svg {
-fill: none;
-stroke: #2BCB96;
-stroke-width: 10px;
-transform: rotate(-0.25turn);
-transform-origin: center center;
-stroke-dasharray: 383;
-stroke-dashoffset: 383;
-transition: stroke-dashoffset 0.3s ease-in-out;
-}
-
-/* -------------------------- icon success */  
-.icon-success {
-position: absolute;
-top: 35px;
-left: calc(50% - 50px/2);
-width: 50px;
-height: 45px;
-border: black;
-}
-.icon-success svg {
-fill: none;
-stroke: white;
-stroke-width: 6px;
-stroke-linecap: round;
-stroke-dasharray: 50;
-stroke-dashoffset: 50;
-transition: stroke-dashoffset 0.2s 0.2s linear;
-opacity: 0;
-}
-
-/* ------------------------- button states */
-/* ----------------------- do submit */  
-.do-submit {
-color: white;
-background: #2BCB96;
-border-color: #2BCB96;
--webkit-animation: closeButton 0.3s 0.3s ease-in forwards;
-        animation: closeButton 0.3s 0.3s ease-in forwards;
-        
-width: 100px;
-height: 60px;
-}
-.do-submit .text {
--webkit-animation: hideText 0.3s forwards;
-        animation: hideText 0.3s forwards;
-}
-.do-submit .timer {
-transition: opacity 0.1s 0.6s linear;
-opacity: 1;
-z-index: 1;
-}
-
-/* -------------------------- succes */  
-.success {
-border-color: #2BCB96;
--webkit-animation: openButton 0.3s ease-in forwards;
-        animation: openButton 0.3s ease-in forwards;
-width: 100px;
-height: 60px;
-}
-.success .timer {
-opacity: 0;
-transition: opacity 0.01s linear;
-}
-.success .icon-success svg {
-opacity: 1;
-stroke-dashoffset: 0;
-}
-
-
-/* ----------------------------- keyframes */
-@-webkit-keyframes closeButton {
-90% {
-  width: 60px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  transition: all 0.5s ease-in-out;
+  outline: none;
+  /* move to center */
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
   height: 60px;
-  background: white;
-  border-width: 10px;
-  border-color: #BBBBBB;
-}
-100% {
-  width: 60px;
+  
+  }
+  
+  .btn-lg {
+  width: 100px;
   height: 60px;
-  background: white;
-  border-width: 10px;
-  border-color: #BBBBBB;
-  border-radius: 50%;
-}
-}
-@keyframes closeButton {
-90% {
-  width: 60px;
-  height: 60px;
-  background: white;
-  border-width: 10px;
-  border-color: #BBBBBB;
-}
-100% {
-  width: 60px;
-  height: 60px;
-  background: white;
-  border-width: 10px;
-  border-color: #BBBBBB;
-  border-radius: 50%;
-}
-}
-@-webkit-keyframes openButton {
-from {
-  width: 120px;
-  height: 120px;
-  background: white;
-  border-color: #2BCB96;
-  border-width: 10px;
-  border-radius: 50%;
-}
-90% {
-  width: 380px;
-  height: 120px;
-  background: #2BCB96;
-  border-width: 5px;
-}
-100% {
-  width: 380px;
-  height: 120px;
-  background: #2BCB96;
-  border-color: #2BCB96;
-  border-width: 5px;
+  border: 5px solid;
   border-radius: 60px;
-}
-}
-@keyframes openButton {
-from {
-  width: 120px;
-  height: 120px;
-  background: white;
-  border-color: #2BCB96;
-  border-width: 10px;
-  border-radius: 50%;
-}
-90% {
-  width: 380px;
-  height: 120px;
-  background: #2BCB96;
-  border-width: 5px;
-}
-100% {
-  width: 380px;
-  height: 120px;
-  background: #2BCB96;
-  border-color: #2BCB96;
-  border-width: 5px;
-  border-radius: 60px;
-}
-}
-
-
-@-webkit-keyframes hideText {
-from {
-  opacity: 1;
-  transform: scaleX(1);
-}
-20% {
-  transform: scaleX(1.1);
-}
-40% {
-  opacity: 1;
-  transform: scaleX(1);
-}
-to {
-  opacity: 0;
-}
-}
-@keyframes hideText {
-from {
-  opacity: 1;
-  transform: scaleX(1);
-}
-20% {
-  transform: scaleX(1.1);
-}
-40% {
-  opacity: 1;
-  transform: scaleX(1);
-}
-to {
-  opacity: 0;
-}
-}
-@-webkit-keyframes showText {
-from {
-  opacity: 0;
-}
-to {
-  opacity: 1;
-}
-}
-@keyframes showText {
-from {
-  opacity: 0;
-}
-to {
-  opacity: 1;
-}
-}
-/* ----------------------- utility classes */
-.top-left {
-position: absolute;
-top: 30px;
-left: 20px;
-}
-
-
-label {
-font-weight: bold;
-/* move to center */
-display: block;
-text-align: center;
-font-size: large;
-}
-
-input[type="text"], input[type="password"], input[type="email"], textarea {
-border: 1px solid #ccc;
-padding: 10px;
-font-size: 16px;
-border-radius: 5px;
-/* move to center */
-display: block;
-margin: 0 auto;
-
-
-}
-
-input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
-outline: none;
-border-color: blue;
-box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
-}
-
-button[type="submit"] {
-  display: none;
-}
-
-.passReq {
-  text-align: center;
-  /* get rid of bullet points */
-  list-style:none;
   font-size: large;
-  font-style: italic;
-}
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  }
+  
+  .btn-sm {
+  width: 10px;
+  height: 40px;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  }
+  
+  .btn-green {
+  color: #2BCB96;
+  background: white;
+  border-color: #2BCB96;
+  }
+  .btn-green:hover {
+  color: white;
+  background: #2BCB96;
+  }
+  
+  .btn-black {
+  color: white;
+  background: darkgray;
+  }
+  .btn-black:hover {
+  background: black;
+  }
+  
+  /* --------------------------------- timer */  
+  .timer {
+  position: absolute;
+  left: calc(50% - 120px/2);
+  width: 120px;
+  height: 120px;
+  opacity: 0;
+  }
+  .timer svg {
+  fill: none;
+  stroke: #2BCB96;
+  stroke-width: 10px;
+  transform: rotate(-0.25turn);
+  transform-origin: center center;
+  stroke-dasharray: 383;
+  stroke-dashoffset: 383;
+  transition: stroke-dashoffset 0.3s ease-in-out;
+  }
+  
+  /* -------------------------- icon success */  
+  .icon-success {
+  position: absolute;
+  top: 35px;
+  left: calc(50% - 50px/2);
+  width: 50px;
+  height: 45px;
+  border: black;
+  }
+  .icon-success svg {
+  fill: none;
+  stroke: white;
+  stroke-width: 6px;
+  stroke-linecap: round;
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  transition: stroke-dashoffset 0.2s 0.2s linear;
+  opacity: 0;
+  }
+  
+  /* ------------------------- button states */
+  /* ----------------------- do submit */  
+  .do-submit {
+  color: white;
+  background: #2BCB96;
+  border-color: #2BCB96;
+  -webkit-animation: closeButton 0.3s 0.3s ease-in forwards;
+          animation: closeButton 0.3s 0.3s ease-in forwards;
+          
+  width: 100px;
+  height: 60px;
+  }
+  .do-submit .text {
+  -webkit-animation: hideText 0.3s forwards;
+          animation: hideText 0.3s forwards;
+  }
+  .do-submit .timer {
+  transition: opacity 0.1s 0.6s linear;
+  opacity: 1;
+  z-index: 1;
+  }
+  
+  /* -------------------------- succes */  
+  .success {
+  border-color: #2BCB96;
+  -webkit-animation: openButton 0.3s ease-in forwards;
+          animation: openButton 0.3s ease-in forwards;
+  width: 100px;
+  height: 60px;
+  }
+  .success .timer {
+  opacity: 0;
+  transition: opacity 0.01s linear;
+  }
+  .success .icon-success svg {
+  opacity: 1;
+  stroke-dashoffset: 0;
+  }
+  
+  
+  /* ----------------------------- keyframes */
+  @-webkit-keyframes closeButton {
+  90% {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-width: 10px;
+    border-color: #BBBBBB;
+  }
+  100% {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-width: 10px;
+    border-color: #BBBBBB;
+    border-radius: 50%;
+  }
+  }
+  @keyframes closeButton {
+  90% {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-width: 10px;
+    border-color: #BBBBBB;
+  }
+  100% {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-width: 10px;
+    border-color: #BBBBBB;
+    border-radius: 50%;
+  }
+  }
+  @-webkit-keyframes openButton {
+  from {
+    width: 120px;
+    height: 120px;
+    background: white;
+    border-color: #2BCB96;
+    border-width: 10px;
+    border-radius: 50%;
+  }
+  90% {
+    width: 380px;
+    height: 120px;
+    background: #2BCB96;
+    border-width: 5px;
+  }
+  100% {
+    width: 380px;
+    height: 120px;
+    background: #2BCB96;
+    border-color: #2BCB96;
+    border-width: 5px;
+    border-radius: 60px;
+  }
+  }
+  @keyframes openButton {
+  from {
+    width: 120px;
+    height: 120px;
+    background: white;
+    border-color: #2BCB96;
+    border-width: 10px;
+    border-radius: 50%;
+  }
+  90% {
+    width: 380px;
+    height: 120px;
+    background: #2BCB96;
+    border-width: 5px;
+  }
+  100% {
+    width: 380px;
+    height: 120px;
+    background: #2BCB96;
+    border-color: #2BCB96;
+    border-width: 5px;
+    border-radius: 60px;
+  }
+  }
+  
+  
+  @-webkit-keyframes hideText {
+  from {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(1.1);
+  }
+  40% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  to {
+    opacity: 0;
+  }
+  }
+  @keyframes hideText {
+  from {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(1.1);
+  }
+  40% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  to {
+    opacity: 0;
+  }
+  }
+  @-webkit-keyframes showText {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+  }
+  @keyframes showText {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+  }
+  /* ----------------------- utility classes */
+  .top-left {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  }
+  
+  
+  label {
+  font-weight: bold;
+  /* move to center */
+  display: block;
+  text-align: center;
+  font-size: large;
+  }
+  
+  input[type="text"], input[type="password"], input[type="email"], textarea {
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  /* move to center */
+  display: block;
+  margin: 0 auto;
+  
+  
+  }
+  
+  input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+  outline: none;
+  border-color: blue;
+  box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+  }
+  
+  button[type="submit"] {
+    display: none;
+  }
+  
+  .passReq {
+    text-align: center;
+    /* get rid of bullet points */
+    list-style:none;
+    font-size: large;
+    font-style: italic;
+  }
