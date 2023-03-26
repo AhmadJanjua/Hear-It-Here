@@ -1,32 +1,20 @@
 {% extends 'templates/base.html' %} {% block content %}
-<h2 class="login-h">Login</h2>
 
-<form method="post">
+<form class="login-form" method="post">
+    <h2 class="login-h">Login</h2>
     {% csrf_token %}
-    <label for="{{ form.username.id_for_label }}">Username</label>
-    {{ form.username }}
-    <br />
-    <label for="{{ form.password.id_for_label }}">Password</label>
-    {{ form.password }}
-    <br />
-
-    <button id="js-btn" class="btn btn-green btn-lg" onclick="doSubmit()">
+    <div class="input">
+        <label for="{{ form.username.id_for_label }}">Username</label>
+        {{ form.username }}
+        <br />
+        <label for="{{ form.password.id_for_label }}">Password</label>
+        {{ form.password }}
+        <br />
+        Don't have an account? <a class="join-here" href="{% url 'account:signup' %}">Join here</a>.
+    </div>
+    <br>
+    <button class="btn">
         <span class="text">Submit</span>
-        <div class="timer">
-            <svg
-                id="js-timer"
-                viewBox="0 0 120 120"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <circle cx="60" cy="60" r="55" />
-            </svg>
-        </div>
-        <div class="icon-success">
-            <svg viewBox="0 0 50 45" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20,42 L3, 25" />
-                <path d="M20,42 L47,3" />
-            </svg>
-        </div>
     </button>
 </form>
 {% endblock %}

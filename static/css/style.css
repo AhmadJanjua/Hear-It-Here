@@ -5,7 +5,6 @@
 }
 
 body {
-    background: #fff;
     font-family: 'Poppins';
     min-height: 100vh;
     background: rgb(2, 41, 48) 100%;
@@ -36,7 +35,7 @@ h1{
   }
   
   .subforum-title{
-  background: conic-gradient(at top right, lime, cyan);
+  background: conic-gradient(at top right, orange, cyan);
     padding: 5px;
     border-radius: 5px;
     margin: 4px;
@@ -83,6 +82,11 @@ h1{
   .subforum-description h1 a:hover {
       color: #40E0D0;
   }
+
+  .subjects a:hover, .last-reply a:hover, .last-post:hover, .User a:hover, .AnotherUser a:hover {
+    color: #40E0D0;
+  }
+  
   
   .center{
     display: flex;
@@ -315,7 +319,7 @@ header .search {
     flex-direction: column;
     background: #111314;
     width: 100%;
-    height: 400px;
+    height: 350px;
     padding: 40px;
     border-top: 1px solid #fff;
     z-index: 20;
@@ -535,142 +539,78 @@ header .search {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
-    margin-top: 50px;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid #40E0D0;
+    color: black;
+  }
+
+  .login-form {
+    top: 45%;
+    margin: 0 auto;
+    margin-top: 1%;
+    margin-bottom: 8%;
+    left: 50%;
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+    align-items: center;
+    padding: 50px 40px;
+    color: black;
+  }
+
+  .input {
+    margin: 15px 0;
+  }
+
+  .login-form input[type=text] {
+    border-bottom: 2px solid #111314 !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+  }
+
+  .login-form input[type=password] {
+    border-bottom: 2px solid #111314 !important;
+    border-radius: 0 !important;
+    width: 100% !important;
   }
   
+  @media screen and (max-width: 800px) {
+    .login-form {
+      width: 350px;
+    }
+  }
+
+  @media screen and (max-width: 300px) {
+    .login-form {
+      width: 290px;
+    }
+  }
   
   .btn {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 50px;
-  transition: all 0.5s ease-in-out;
-  outline: none;
-  /* move to center */
-  margin-left: auto;
-  margin-right: auto;
-  width: 100px;
-  height: 60px;
-  
-  }
-  
-  .btn-lg {
-  width: 100px;
-  height: 60px;
-  border: 5px solid;
-  border-radius: 60px;
-  font-size: large;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  }
-  
-  .btn-sm {
-  width: 10px;
-  height: 40px;
+  font-size: 20px;
+  text-align: center;
+  background-color: #111314;
+  padding: 6px 20px;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out;
+  color: #fff;
   border: none;
-  border-radius: 3px;
-  font-size: 16px;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+  margin-top: -10%;
+  }
+
+  .btn:hover{
+    color: black;
+    background: #40E0D0;
+  }
+
+  .join-here {
+    color: darkblue;
+    text-decoration: none;
+    cursor: pointer;
   }
   
-  .btn-green {
-  color: #2BCB96;
-  background: white;
-  border-color: #2BCB96;
-  }
-  .btn-green:hover {
-  color: white;
-  background: #2BCB96;
-  }
-  
-  .btn-black {
-  color: white;
-  background: darkgray;
-  }
-  .btn-black:hover {
-  background: black;
-  }
-  
-  /* --------------------------------- timer */  
-  .timer {
-  position: absolute;
-  left: calc(50% - 120px/2);
-  width: 120px;
-  height: 120px;
-  opacity: 0;
-  }
-  .timer svg {
-  fill: none;
-  stroke: #2BCB96;
-  stroke-width: 10px;
-  transform: rotate(-0.25turn);
-  transform-origin: center center;
-  stroke-dasharray: 383;
-  stroke-dashoffset: 383;
-  transition: stroke-dashoffset 0.3s ease-in-out;
-  }
-  
-  /* -------------------------- icon success */  
-  .icon-success {
-  position: absolute;
-  top: 35px;
-  left: calc(50% - 50px/2);
-  width: 50px;
-  height: 45px;
-  border: black;
-  }
-  .icon-success svg {
-  fill: none;
-  stroke: white;
-  stroke-width: 6px;
-  stroke-linecap: round;
-  stroke-dasharray: 50;
-  stroke-dashoffset: 50;
-  transition: stroke-dashoffset 0.2s 0.2s linear;
-  opacity: 0;
-  }
-  
-  /* ------------------------- button states */
-  /* ----------------------- do submit */  
-  .do-submit {
-  color: white;
-  background: #2BCB96;
-  border-color: #2BCB96;
-  -webkit-animation: closeButton 0.3s 0.3s ease-in forwards;
-          animation: closeButton 0.3s 0.3s ease-in forwards;
-          
-  width: 100px;
-  height: 60px;
-  }
-  .do-submit .text {
-  -webkit-animation: hideText 0.3s forwards;
-          animation: hideText 0.3s forwards;
-  }
-  .do-submit .timer {
-  transition: opacity 0.1s 0.6s linear;
-  opacity: 1;
-  z-index: 1;
-  }
-  
-  /* -------------------------- succes */  
-  .success {
-  border-color: #2BCB96;
-  -webkit-animation: openButton 0.3s ease-in forwards;
-          animation: openButton 0.3s ease-in forwards;
-  width: 100px;
-  height: 60px;
-  }
-  .success .timer {
-  opacity: 0;
-  transition: opacity 0.01s linear;
-  }
-  .success .icon-success svg {
-  opacity: 1;
-  stroke-dashoffset: 0;
-  }
-  
-  
-  /* ----------------------------- keyframes */
   @-webkit-keyframes closeButton {
   90% {
     width: 60px;
@@ -812,11 +752,8 @@ header .search {
   
   
   label {
-  font-weight: bold;
-  /* move to center */
+  font-size: 18px;
   display: block;
-  text-align: center;
-  font-size: large;
   }
   
   input[type="text"], input[type="password"], input[type="email"], textarea {

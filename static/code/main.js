@@ -26,53 +26,53 @@ function showReply(){
     var commentArea = document.getElementById("reply-area");
     commentArea.setAttribute("style", "display:block;");
 }
-var button = document.getElementById('js-btn'),
-    timer = document.getElementById('js-timer'),
-    reset = document.getElementById('js-reset');
+// var button = document.getElementById('js-btn'),
+//     timer = document.getElementById('js-timer'),
+//     reset = document.getElementById('js-reset');
 
 
-button.addEventListener('click', doSubmit);
-reset.addEventListener('click', resetButton);
+// button.addEventListener('click', doSubmit);
+// reset.addEventListener('click', resetButton);
 
 
-function doSubmit() {
+// function doSubmit() {
   
-  if (button.classList.contains('do-submit')) { return; }
+//   if (button.classList.contains('do-submit')) { return; }
 
-  // do clicked animation
-  button.classList.add('do-submit');
+//   // do clicked animation
+//   button.classList.add('do-submit');
   
-  // TODO handle submit, should return amountLoaded
+//   // TODO handle submit, should return amountLoaded
   
-  // manually feed amountLoaded as if receiving 0-100% values
-  setTimeout(function() {
-    doTimer(0);
-  }, 1200);
+//   // manually feed amountLoaded as if receiving 0-100% values
+//   setTimeout(function() {
+//     doTimer(0);
+//   }, 1200);
   
-  setTimeout(function() {
-    doTimer(15);
-  }, 1200);
+//   setTimeout(function() {
+//     doTimer(15);
+//   }, 1200);
 
-  setTimeout(function() {
-    doTimer(75); 
-  }, 2000);
+//   setTimeout(function() {
+//     doTimer(75); 
+//   }, 2000);
 
-  setTimeout(function() {
-    doTimer(100);
-  }, 2800);
-}
+//   setTimeout(function() {
+//     doTimer(100);
+//   }, 2800);
+// }
 
 
-function doTimer(amountLoaded) { 
+// function doTimer(amountLoaded) { 
   
-  timer.style.strokeDashoffset = 3.83 * (100 - amountLoaded) + 'px';
+//   timer.style.strokeDashoffset = 3.83 * (100 - amountLoaded) + 'px';
 
-  if (amountLoaded === 100) {
-    setTimeout(function() {
-      button.classList.add('success');
-    }, 500);
-  }
-}
+//   if (amountLoaded === 100) {
+//     setTimeout(function() {
+//       button.classList.add('success');
+//     }, 500);
+//   }
+// }
 
 function navBar() {
   let searchBtn = document.querySelector('.searchBtn');

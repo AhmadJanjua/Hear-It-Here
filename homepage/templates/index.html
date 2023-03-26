@@ -1,5 +1,6 @@
 {% extends 'templates/base.html' %}
 {% block content %}
+
 <div class = "container">
     <div class = "subforum">
         <div class = "subforum-title">
@@ -19,9 +20,9 @@
                 </div>
                 <div class = "subforum-info subforum-column">
                     {% if category.post_set.last %}
-                        <b><a href="{% url 'forum:view_post' category_id=category.id post_id=category.post_set.last.id%}">
+                        <b><a class="last-post" href="{% url 'forum:view_post' category_id=category.id post_id=category.post_set.last.id%}">
                             Last Post</a></b> by
-                        <a href="{% url 'account:profile' username=category.post_set.last.user.username %}">
+                        <a class="last-post" href="{% url 'account:profile' username=category.post_set.last.user.username %}">
                             {{ category.post_set.last.user.username }}</a>
                         <br>
                         on <small>{{ category.post_set.last.time  }}</small>
