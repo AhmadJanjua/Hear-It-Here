@@ -351,7 +351,7 @@ header .search {
   }
   
   footer{
-    margin-top: 20px;
+    margin-top: auto;
     padding: 20px;
     background-color: black;
     text-align: center;
@@ -359,7 +359,7 @@ header .search {
 
   .footer-bottom {
     bottom: 0 !important;
-    position: relative;
+    position: absolute;
     width: 100%;
   }
 
@@ -367,6 +367,10 @@ header .search {
 
   .table-head{
     display: flex;
+  }
+
+  .profile {
+    margin-top: 330px;
   }
   
   .table-head div{
@@ -562,7 +566,7 @@ header .search {
     margin: 15px 0;
   }
 
-  .login-form input[type=text] {
+  .login-form input[type=text], .login-form input[type="email"] {
     border-bottom: 2px solid #111314 !important;
     border-radius: 0 !important;
     width: 100% !important;
@@ -598,6 +602,7 @@ header .search {
   display: block;
   margin: 0 auto;
   margin-top: -10%;
+  margin-bottom: -5%;
   }
 
   .btn:hover{
@@ -768,7 +773,7 @@ header .search {
     margin: 0 auto;
   }
   
-  input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+  input[type="text"]:focus, input[type="password"]:focus, textarea:focus, input[type="email"]:focus {
   outline: none;
   border-top: none;
   border-right: none;
@@ -782,7 +787,7 @@ header .search {
   
   .passReq {
     text-align: center;
-    list-style:none;
-    font-size: large;
+    font-size: 12px;
     font-style: italic;
+    display: none;
   }
