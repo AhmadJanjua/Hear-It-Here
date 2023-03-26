@@ -5,8 +5,8 @@ from .models import CustomUser, Profile
 
 # a form to ask for user information regarding
 class SignUpForm(UserCreationForm):
-    email = forms.EmailField(max_length=255)
-    username = forms.CharField(max_length=50)
+    email = forms.EmailField(max_length=255, label='Email Address')
+    username = forms.CharField(max_length=50, label='Username')
 
     class Meta:
         model = CustomUser
