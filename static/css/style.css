@@ -83,8 +83,21 @@ h1{
       color: #40E0D0;
   }
 
-  .subjects a:hover, .last-reply a:hover, .last-post:hover, .User a:hover, .AnotherUser a:hover {
+  .subjects a {
+    color: lightblue;
+  }
+
+  .subjects a:hover, .last-reply a:hover, .last-post:hover {
     color: #40E0D0;
+  }
+
+  .User a, .AnotherUser a {
+    color: lightblue;
+    text-transform: uppercase;
+  }
+
+  .User a:hover, .AnotherUser a:hover {
+    color: #399be6;
   }
   
   
@@ -544,8 +557,9 @@ header .search {
 
   .head{
     display: flex;
-    background-color: grey;
+    background-color: #111314;
     padding: 5px;
+    color: #fff;
     font-weight: bold;
     font-size: 15px;
   }
@@ -560,7 +574,8 @@ header .search {
   
   .body{
     display: flex;
-    background-color: gray;
+    background-color: #111314;
+    color: #fff;
     padding: 10px;
     margin-top: 5px;
   }
@@ -703,6 +718,22 @@ header .search {
   .btn-edit:hover{
     background: #40E0D0;
     color: black;
+  }
+
+  .btn-create-post {
+    font-size: 16px;
+    text-align: center;
+    background-color: #111314;
+    padding: 6px 20px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out;
+    color: #fff;
+    border: 1px solid #40E0D0;
+    border-radius: 5px;
+  }
+
+  .btn-create-post:hover{
+    color: black;
+    background: #40E0D0;
   }
 
   .join-here {
@@ -1048,7 +1079,6 @@ header .search {
 }
 
 .delete-btn:hover {
-  background: #40E0D0;
   color: black !important;
 }
 
@@ -1150,3 +1180,8 @@ header .search {
   padding-left: 10%;
   padding-right: 10%;
 }
+
+.created-by {
+  font-size: smaller;
+}
+
