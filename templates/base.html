@@ -25,45 +25,31 @@
 
     <body>
         <header>
-            <a href="#" class="logo">Hear It Here</a>
+            <a href="{% url 'homepage:home' %}" class="logo">Hear It Here</a>
             <div class="nav-bar">
                 <ul class="nav-list">
                     <li>
-                        <a class="nav-items" href="{% url 'homepage:home' %}"
-                            >Home</a
-                        >
+                        <a class="nav-items" href="{% url 'homepage:home' %}">Home</a>
                     </li>
                     <li>
                         <a class="nav-items" href="#">About</a>
                     </li>
-                    <li>
-                        <a class="nav-items" href="{% url 'account:genre'%}"
-                            >Genre</a
-                        >
-                    </li>
                     {% if user.is_authenticated %}
                     <li>
-                        <a class="nav-items" href="{% url 'account:logout' %}"
-                            >Logout</a
-                        >
+                        <a class="nav-items" href="{% url 'account:genre'%}">Genre</a>
                     </li>
                     <li>
-                        <a
-                            class="nav-items"
-                            href="{% url 'account:profile' username=user.username %}"
-                            >Profile</a
-                        >
+                        <a class="nav-items" href="{% url 'account:logout' %}">Logout</a>
+                    </li>
+                    <li>
+                        <a class="nav-items" href="{% url 'account:profile' username=user.username %}">Profile</a>
                     </li>
                     {% else %}
                     <li>
-                        <a class="nav-items" href="{% url 'account:login' %}"
-                            >Login</a
-                        >
+                        <a class="nav-items" href="{% url 'account:login' %}">Login</a>
                     </li>
                     <li>
-                        <a class="nav-items" href="{% url 'account:signup' %}"
-                            >Sign Up</a
-                        >
+                        <a class="nav-items" href="{% url 'account:signup' %}">Sign Up</a>
                     </li>
                     {% endif %}
                 </ul>
