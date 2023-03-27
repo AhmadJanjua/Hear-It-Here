@@ -13,7 +13,7 @@
                 </div>
                 <div class = "subforum-description subforum-column">
                     <h1><a href="{% url 'forum:posts' category_id=category.id %}">{{ category.title }}</a></h1>
-                    <p>{{ category.content }}</p>
+                    <p class="content-p">{{ category.content }}</p>
                 </div>
                 <div class = "subforum-stats subforum-column">
                     <span>{{ category.post_set.count }} Post(s)</span>
