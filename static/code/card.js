@@ -69,7 +69,7 @@ allCards.forEach(function (el) {
 
     event.target.style.transform = 'translate(' + event.deltaX + 'px, ' + event.deltaY + 'px) rotate(' + rotate + 'deg)';
   });
-
+const popup = document.getElementById('popup');
   hammertime.on('panend', function (event) {
     el.classList.remove('moving');
     tinderContainer.classList.remove('tinder_love');
@@ -93,16 +93,34 @@ allCards.forEach(function (el) {
 
       event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(' + rotate + 'deg)';
       initCards();
+      var cards = document.querySelectorAll('.tinder--card:not(.removed)');
+      // popup.style.opacity = '0';
+      // if (cards.length == 0) {
+      //   // alert('There are no more cards left!');
+      //   // create a popup to show the user that there are no more cards left
+      //   popup.style.opacity = '1';
+      //   //add transition to the popup
+      //   popup.style.transition = 'opacity 5s ease-in-out';
+      //   return false;
+      // }
+      
     }
   });
 });
-
 function createButtonListener(love) {
   return function (event) {
     var cards = document.querySelectorAll('.tinder--card:not(.removed)');
     var moveOutWidth = document.body.clientWidth * 1.5;
 
-    if (!cards.length) return false;
+    popup.style.opacity = '0';
+    if (cards.length == 0) {
+      // alert('There are no more cards left!');
+      // create a popup to show the user that there are no more cards left
+      popup.style.opacity = '1';
+      //add transition to the popup
+      popup.style.transition = 'opacity 3s ease-in-out';
+      return false;
+    }
 
     var card = cards[0];
 
@@ -120,8 +138,10 @@ function createButtonListener(love) {
   };
 }
 
+
 var nopeListener = createButtonListener(false);
 var loveListener = createButtonListener(true);
 
 nope.addEventListener('click', nopeListener);
 love.addEventListener('click', loveListener);
+
