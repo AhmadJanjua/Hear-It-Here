@@ -143,5 +143,5 @@ EMAIL_HOST_PASSWORD = 'seibyiiaoxwkspyy'  # app access code !password
 AUTH_USER_MODEL = 'account.CustomUser'
 
 # After login or logout, send to main page
-LOGIN_REDIRECT_URL = '/account/profile/'
+LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
