@@ -1,10 +1,13 @@
 {% extends 'templates/base.html' %}
 {% block content %}
-    <h2>Update Profile</h2>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="submit-btns" type="submit">Submit</button>
-    </form>
+    <div class="update-container">
+        <form class="update-profile-form" method="POST" enctype="multipart/form-data">
+            <h2>UPDATE PROFILE</h2>
+            <br>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="submit-btns-update" type="submit">Submit</button>
+        </form>
+    </div>
 {% endblock %}
 
