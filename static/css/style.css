@@ -13,8 +13,7 @@ body {
 }
 
 a{
-  color: lightblue;
-  font-weight: bolder;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -36,7 +35,7 @@ h1{
   }
   
   .subforum-title{
-    background: conic-gradient(at top right, orange, cyan);
+    background: #40E0D0;
     padding: 5px;
     border-radius: 5px;
     margin: 4px;
@@ -294,14 +293,14 @@ header .search {
 }
 
 @media (max-width: 800px) {
-    header .nav-list {
-        position: absolute;
-        opacity: 0;
-        visibility: hidden;
-        left: 100%;
-   }   
+  header .nav-list {
+      opacity: 0;
+      position: absolute;
+      visibility: hidden;
+      left: 100%;
+  }   
 
-   .menuToggle {
+   .menuToggle { 
     position: absolute;
     display: block;
     font-size: 2em;
@@ -337,12 +336,14 @@ header .search {
         display: none;
     }
 
+    .profile {
+      margin-bottom: 5%;
+    }
+
     .container-profile {
       width: 300px !important;
       margin-bottom: 10% !important;
     }
-
-    .form
 
     .left-profile, .right-profile {
       flex-basis: 100% !important;
@@ -392,7 +393,7 @@ header .search {
 
   .container-profile {
     display: table;
-    border: 1px solid #ffe5b4;
+    border: 1px solid #40E0D0;
     padding: 10px;
     margin: 0 auto;
     background: #111314;
@@ -418,6 +419,11 @@ header .search {
     margin-top: 10%;
     font-size: 18px;
     flex-basis: 40%;
+    font-size: 16px;
+  }
+
+  .img-profile {
+    border-radius: 5px;
   }
 
   .profile-stats {
@@ -429,7 +435,7 @@ header .search {
   .table-head div{
     padding: 5px;
     margin: 2px;
-    background: conic-gradient(at top right, orange, #ffe5b4);
+    background: #40E0D0;
     font-weight: bold;
     color: black;
   }
@@ -506,7 +512,7 @@ header .search {
   }
   
   .navigate a{
-    color: #ffff;
+    color: #fff;
     font-weight: bolder;
   }
   
@@ -644,7 +650,7 @@ header .search {
     }
   }
   
-  .btn, .btn-edit {
+  .btn {
   font-size: 20px;
   text-align: center;
   background-color: #111314;
@@ -659,15 +665,31 @@ header .search {
   margin-bottom: -5%;
   }
 
-  .btn:hover, .btn-edit:hover{
+  .btn:hover{
     color: black;
     background: #40E0D0;
   }
 
   .btn-edit {
+    font-size: 15px;
+    text-align: center;
+    background-color: transparent;
+    padding: 6px 10px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out;
+    color: #fff;
+    border: 1.5px solid #40E0D0;
+    border-radius: 5px;
+    margin: 0 auto;
     margin: 0 0 !important;
     margin-top: 0% !important;
     margin-bottom: 0% !important;
+    margin-left: 10px !important;
+    color: #fff;
+  }
+
+  .btn-edit:hover{
+    background: #40E0D0;
+    color: black;
   }
 
   .join-here {
@@ -1007,9 +1029,14 @@ header .search {
 .delete-btn {
   background: transparent;
   border: 1px solid #40E0D0;
-  color: #fff !important;
-  padding: 2px 5px;
+  color: #fff;
+  padding: 0px 3px;
   border-radius: 5px;
+}
+
+.delete-btn:hover {
+  background: #40E0D0;
+  color: black !important;
 }
 
 .add-btn {
