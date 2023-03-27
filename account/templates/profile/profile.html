@@ -1,6 +1,5 @@
 {% extends 'templates/base.html' %}
 {% block content %}
-<header>
 	<div class="container">
 
 		<div class="profile">
@@ -31,14 +30,12 @@
 			</div>
             {% if user.id == profile.user.id or user.is_mod %}
             <div class="profile-user-settings">
-				<button class="btn profile-edit-btn"><a href="{% url 'account:update_profile' username=profile.user.username %}">
+				<button class="btn"><a href="{% url 'account:update_profile' username=profile.user.username %}">
                     Edit Profile</a></button>
 			</div>
             {% endif %}
 		</div>
 	</div>
-
-</header>
 
 <main>
     
