@@ -61,7 +61,7 @@
                     {% if user.is_mod or user.id == comment.user.id %}
                     <hr>
                     <div class = "comment">
-                        <button><a href="{% url 'forum:delete_comment' comment_id=comment.id %}">DELETE</a> </button>
+                        <button class="delete-btn"><a href="{% url 'forum:delete_comment' comment_id=comment.id %}">DELETE</a> </button>
                     </div>
                     {% endif %}
                 </div>

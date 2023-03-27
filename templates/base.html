@@ -32,7 +32,7 @@
                         <a class="nav-items" href="{% url 'homepage:home' %}">Home</a>
                     </li>
                     <li>
-                        <a class="nav-items" href="#">About</a>
+                        <a class="nav-items" href="{% url 'account:about'%}">About</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li>

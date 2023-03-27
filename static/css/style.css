@@ -35,7 +35,7 @@ h1{
   }
   
   .subforum-title{
-  background: conic-gradient(at top right, orange, cyan);
+    background: conic-gradient(at top right, orange, cyan);
     padding: 5px;
     border-radius: 5px;
     margin: 4px;
@@ -372,12 +372,17 @@ header .search {
   .profile {
     margin-top: 330px;
   }
+
+  .profile-user-settings {
+    margin-top: 12%;
+  }
   
   .table-head div{
     padding: 5px;
     margin: 2px;
-    background-color: rgb(97, 94, 94);
+    background: conic-gradient(at top right, orange, #ffe5b4);
     font-weight: bold;
+    color: black;
   }
   
   .table-head .status{
@@ -457,7 +462,7 @@ header .search {
   }
   
   .note{
-    background-color: gray;
+    background-color: #111314;
     padding: 20px;
     display: block;
   }
@@ -780,18 +785,33 @@ header .search {
   border-left: none;
   border-bottom: 1px solid #fff;
   }
-  
+
   .submit-btns {
-    color: #111314;
-    background: white;
-    width: 80px;
-    height: 40px;
-  }
+    font-size: 20px;
+    text-align: center;
+    background-color: #111314;
+    padding: 6px 20px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    }
+  
+    .submit-btns:hover{
+      color: black;
+      background: #40E0D0;
+    }
   
   .passReq {
     text-align: center;
     font-size: 12px;
     font-style: italic;
+  }
+
+  .posts-table {
+    margin-top: 15%;
   }
 
 .tinder {
@@ -927,4 +947,26 @@ header .search {
 
 .fa-remove {
   color: #CDD6DD;
+}
+
+.delete-btn {
+  background: transparent;
+  border: 1px solid #40E0D0;
+  color: #fff !important;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.add-btn {
+  background: transparent;
+  border: 1px solid #40E0D0;
+  color: #fff !important;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.add-btn:hover {
+  background: #111314;
+  border: 1px solid #fff;
 }

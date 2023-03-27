@@ -117,3 +117,6 @@ def update_profile(request, username):
 
 def genre_view(request):
     return render(request, 'profile/genre.html')
+
+def about(request):
+    return render(request, 'profile/about.html')

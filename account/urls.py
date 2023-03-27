@@ -6,6 +6,7 @@ app_name = 'account'
 # create the path to direct the inputs
 urlpatterns = [
     path('auth/', include('django.contrib.auth.urls')),
+    path('about/', views.about, name='about'),
     path('signup/', views.signup, name='signup'),
     path('genre/', views.genre_view, name='genre'),
     path('auth/login/', views.login, name='login'),
