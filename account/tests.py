@@ -31,7 +31,6 @@ class CustomUserTests(TestCase):
             email='testuser@example.com',
             username='testuser',
             password='testpass',
-            birthday=timezone.now(),
             is_active=True
         )
         # Create a superuser
@@ -39,7 +38,6 @@ class CustomUserTests(TestCase):
             email='superuser@example.com',
             username='superuser',
             password='superpass',
-            birthday=timezone.now()
         )
     
     # Test that a user was created with the expected attributes
@@ -47,7 +45,6 @@ class CustomUserTests(TestCase):
         self.assertEqual(self.user.email, 'testuser@example.com')
         self.assertEqual(self.user.username, 'testuser')
         self.assertTrue(self.user.check_password('testpass'))
-        self.assertEqual(self.user.birthday, timezone.now())
         self.assertFalse(self.user.is_staff)
         self.assertTrue(self.user.is_active)
         self.assertFalse(self.user.is_mod)
@@ -57,7 +54,6 @@ class CustomUserTests(TestCase):
         self.assertEqual(self.superuser.email, 'superuser@example.com')
         self.assertEqual(self.superuser.username, 'superuser')
         self.assertTrue(self.superuser.check_password('superpass'))
-        self.assertEqual(self.superuser.birthday, timezone.now())
         self.assertTrue(self.superuser.is_staff)
         self.assertTrue(self.superuser.is_active)
         self.assertTrue(self.superuser.is_mod)
@@ -70,7 +66,6 @@ class CustomUserTests(TestCase):
             email='moderator@example.com',
             username='moderator',
             password='modpass',
-            birthday=timezone.now()
         )
         # Check moderator attributes
         self.assertFalse(moderator.is_superuser)
@@ -233,7 +228,6 @@ class SignUpFormTest(TestCase):
             'username': 'testuser',
             'password1': 'testpass123',
             'password2': 'testpass123',
-            'birthday': '1990-01-01'
         }
 
     # Test SignUpForm with valid data

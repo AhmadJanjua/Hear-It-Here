@@ -10,7 +10,7 @@ class SignUpForm(UserCreationForm):
 
     class Meta:
         model = CustomUser
-        fields = ('email', 'username', 'password1', 'password2', 'birthday')
+        fields = ('email', 'username', 'password1', 'password2')
 
 
 # form to update the profile information
