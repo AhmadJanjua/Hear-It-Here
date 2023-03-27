@@ -419,6 +419,10 @@ header .search {
     margin-top: 2%;
   }
 
+  .profile-user-name {
+    text-transform: uppercase;
+  }
+
   .left-profile h1 {
     margin-bottom: 1%;
     margin-left: 2%;
@@ -1068,26 +1072,37 @@ header .search {
   align-items: center;
 }
 
-.update-profile-form {
+.update-form, .update-form-create {
   background: #111314;
   padding: 1% 3%;
   border-radius: 8px;
   border: 1px solid #40E0D0;
 }
 
-.update-profile-form textarea, .update-profile-form input[type=text] {
+.update-form textarea, .update-form input[type=text], .update-form-create textarea, .update-form-create input[type=text] {
   margin: 0;
   margin-bottom: 20px;
   width: 100%;
 }
 
-.update-profile-form textarea {
+.update-form textarea {
   resize: none;
   height: 100px;
 }
 
-.update-profile-form h2 {
+.update-form-create textarea {
+  width: 550px;
+  resize: vertical;
+  max-height: 500px;
+}
+
+.update-form h2, .update-form-create h2 {
   text-align: center;
+}
+
+.update-form label, .update-form label{
+  color: #fff;
+  font-size: larger;
 }
 
 .submit-btns-update {
@@ -1129,4 +1144,9 @@ header .search {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.about {
+  padding-left: 10%;
+  padding-right: 10%;
 }

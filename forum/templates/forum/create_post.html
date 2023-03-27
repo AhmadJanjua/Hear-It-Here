@@ -1,11 +1,12 @@
 {% extends 'templates/base.html' %}
-
 {% block content %}
-    <h2>Create a new post</h2>
-    <form method="post">
+<div class="update-container">
+    <form class="update-form-create" method="post">
+        <h2>CREATE A NEW POST</h2>
+        <br>
         {% csrf_token %}
         {{ form.as_p }}
-        <br>
-        <button class="submit-btns" type="submit">Submit</button>
+        <button class="submit-btns-update" type="submit">Submit</button>
     </form>
+</div>
 {% endblock %}
