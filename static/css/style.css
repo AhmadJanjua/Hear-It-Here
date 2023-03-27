@@ -26,8 +26,9 @@ h1{
 /* --------- Home Page ---------- */
 
 .container{
-    margin: 20px;
-    padding: 20px;
+    margin: 0 20px;
+    padding-bottom: 20px !important;
+    padding: 0 20px;
   }
   
   .subforum{
@@ -104,8 +105,9 @@ h1{
 
   @media screen and (max-width: 460px) and (max-width: 1024px){
     .container{
-        margin: 15px;
-        padding: 15px;
+      margin: 0 15px;
+      padding-bottom: 15px !important;
+      padding: 0 15px;
     }
     .subforum-row{
         display: grid;
@@ -125,8 +127,9 @@ h1{
   @media screen and (max-width: 460px) {
 
     .container{
-        margin: 15px;
-        padding: 15px;
+      margin: 0 15px;
+      padding-bottom: 15px !important;
+      padding: 0 15px;
     }
   
     
@@ -333,6 +336,23 @@ header .search {
     .hide {
         display: none;
     }
+
+    .container-profile {
+      width: 300px !important;
+      margin-bottom: 10% !important;
+    }
+
+    .form
+
+    .left-profile, .right-profile {
+      flex-basis: 100% !important;
+      margin-left: 0;
+    }
+
+    .right-profile {
+      margin-right: 0;
+      width: 100%;
+    }
 }
 
 /* --------- CHECK IF NEEDED ---------- */
@@ -370,13 +390,41 @@ header .search {
     display: flex;
   }
 
+  .container-profile {
+    display: table;
+    border: 1px solid #ffe5b4;
+    padding: 10px;
+    margin: 0 auto;
+    background: #111314;
+    width: 700px;
+    border-radius: 10px;
+  }
+
   .profile {
-    margin-top: 330px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .profile-user-settings {
-    margin-top: 12%;
+    margin-top: 2%;
   }
+
+  .left-profile {
+    flex-basis: 40%;
+  }
+
+  .right-profile {
+    margin-top: 10%;
+    font-size: 18px;
+    flex-basis: 40%;
+  }
+
+  .profile-stats {
+    margin-top: 0 !important;
+    margin: 10px;
+  }
+
   
   .table-head div{
     padding: 5px;
@@ -596,7 +644,7 @@ header .search {
     }
   }
   
-  .btn {
+  .btn, .btn-edit {
   font-size: 20px;
   text-align: center;
   background-color: #111314;
@@ -611,9 +659,15 @@ header .search {
   margin-bottom: -5%;
   }
 
-  .btn:hover{
+  .btn:hover, .btn-edit:hover{
     color: black;
     background: #40E0D0;
+  }
+
+  .btn-edit {
+    margin: 0 0 !important;
+    margin-top: 0% !important;
+    margin-bottom: 0% !important;
   }
 
   .join-here {
@@ -812,7 +866,7 @@ header .search {
   }
 
   .posts-table {
-    margin-top: 15%;
+    /* margin-top: 15%; */
   }
 
 .tinder {

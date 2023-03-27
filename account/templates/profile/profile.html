@@ -1,44 +1,50 @@
 {% extends 'templates/base.html' %}
 {% block content %}
-	<div class="container">
+
+	<div class="container-profile">
 
 		<div class="profile">
+            
+            <div class="left-profile">
+                <h1 class="profile-user-name">Username: {{ profile.user.username }}</h1>
 
-            <h1 class="profile-user-name">{{ profile.user.username }}</h1>
-
-			<div class="profile-image">
+			    <div class="profile-image">
 
 				<img src="{{ profile.image.url }}"
-                     alt="" height="80" width="auto">
+                     alt="" height="200" width="330">
 
-			</div>
-
-			<div class="profile-stats">
-                {% if profile.name.count != 0 %}
-                <b><span class="profile-stat-count">Name:</span> {{ profile.name }}</b>
-                {% endif %}
-                <br>
-                <b><span class="profile-stat-count">{{ posts.count }}</span> post(s)</b>
-
-
-			</div>
-
-			<div class="profile-bio">
-
-				<p><span class="profile-real-name">Bio:</span> {{ profile.bio }}</p>
-
-			</div>
-            {% if user.id == profile.user.id or user.is_mod %}
-            <div class="profile-user-settings">
-				<button class="btn"><a href="{% url 'account:update_profile' username=profile.user.username %}">
-                    Edit Profile</a></button>
-			</div>
+			    </div>
+            </div>
+            
+            <div class="right-profile">
+                <div class="profile-stats">
+                    {% if profile.name.count != 0 %}
+                    <b><span class="profile-stat-count">Name:</span> {{ profile.name }}</b>
+                    {% endif %}
+                    <br>
+                    <div class="profile-bio">
+    
+                        <p><span class="profile-real-name">Bio:</span> {{ profile.bio }}</p>
+        
+                    </div>
+                    <b><span class="profile-stat-count">Posts Created: {{ posts.count }}</span> post(s)</b>
+    
+    
+                </div>
+    
+                {% if user.id == profile.user.id or user.is_mod %}
+                <div class="profile-user-settings">
+                    <button class="btn-edit"><a href="{% url 'account:update_profile' username=profile.user.username %}">
+                        Edit Profile</a></button>
+                </div>
+            </div>
+			
             {% endif %}
 		</div>
 	</div>
 
 <main>
-    
+    <h3>Posts Created By {{ profile.user.username }} ({{ profile.name }}):</h3>
 	<div class = "posts-table">
             <div class = "table-head">
                 <div class = "status">Status</div>
