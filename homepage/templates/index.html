@@ -9,15 +9,17 @@
         {% for category in categories %}
             <div class = "subforum-row">
                 <div class = "subforum-icon subforum-column center">
+                    <a href="{% url 'forum:posts' category_id=category.id %}">
                     {% if category.id == 3 %}
-                        <i class="fa-solid fa-music"></i>
+                        <i class="fa-solid fa-music icon"></i>
                     {% elif category.id == 4 %}
-                        <i class="fa-solid fa-headphones"></i>
+                        <i class="fa-solid fa-headphones icon"></i>
                     {% elif category.id == 5 %}
-                        <i class="fa-solid fa-record-vinyl"></i>
+                        <i class="fa-solid fa-record-vinyl icon"></i>
                     {% else %}
-                        <i class="fa-solid fa-radio"></i>
+                        <i class="fa-solid fa-radio icon"></i>
                     {% endif %}
+                </a>
                 </div>
                 <div class = "subforum-description subforum-column">
                     <h1><a href="{% url 'forum:posts' category_id=category.id %}">{{ category.title }}</a></h1>

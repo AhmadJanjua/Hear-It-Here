@@ -1224,7 +1224,7 @@ header .search {
 .main-about-p {
   padding-left: 7%;
   padding-right: 7%;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .engagement-topics {
@@ -1241,4 +1241,8 @@ header .search {
 .topic i {
   font-size: 40px;
   margin-bottom: 20px;
+}
+
+.icon:hover {
+  color: #40E0D0;
 }

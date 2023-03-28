@@ -36,13 +36,12 @@
                 <div class="profile-user-settings">
                     <a class="btn-edit" href="{% url 'account:update_profile' username=profile.user.username %}">
                         Edit Profile</a></button>
+                    {% endif %}
                 </div>
             </div>
 			
-            {% endif %}
 		</div>
 	</div>
-
 <main>
     {% if profile.name %}
         <h3>Posts Created By {{ profile.user.username }} ({{ profile.name }}):</h3> 
@@ -99,3 +98,4 @@
 </main>
 
 {% endblock %}
+
