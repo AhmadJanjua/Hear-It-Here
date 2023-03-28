@@ -642,7 +642,7 @@ header .search {
     color: black;
   }
 
-  .login-form {
+  .login-form, .signup-form {
     top: 45%;
     margin: 0 auto;
     margin-top: 1%;
@@ -660,26 +660,26 @@ header .search {
     margin: 15px 0;
   }
 
-  .login-form input[type=text], .login-form input[type="email"] {
+  .login-form input[type=text], .login-form input[type="email"], .signup-form input[type=text], .signup-form input[type="email"] {
     border-bottom: 2px solid #111314 !important;
     border-radius: 0 !important;
     width: 100% !important;
   }
 
-  .login-form input[type=password] {
+  .login-form input[type=password], .signup-form input[type=password] {
     border-bottom: 2px solid #111314 !important;
     border-radius: 0 !important;
     width: 100% !important;
   }
   
   @media screen and (max-width: 800px) {
-    .login-form {
+    .signup-form, .login-form {
       width: 350px;
     }
   }
 
   @media screen and (max-width: 300px) {
-    .login-form {
+    .signup-form, .login-form {
       width: 290px;
     }
   }
@@ -1247,7 +1247,7 @@ header .search {
   color: #40E0D0;
 }
 
-#id_username {
+.login-form #id_username {
   margin-bottom: 10%;
   font-size: 16px;
 }
@@ -1261,6 +1261,18 @@ header .search {
   list-style: none;
 }
 
+.signup-form ul li {
+  margin-top: 10px;
+  border-radius: 7px;
+  padding: 3px;
+  font-size: 12px;
+  line-height: 1.4;
+  text-decoration: none;
+  margin-bottom: 10px;
+  list-style: none;
+  display:block; /* add back after */
+}
+
 .update-form-create ul li {
   list-style: none;
   border: 1px solid red;
@@ -1268,4 +1280,14 @@ header .search {
   padding: 3px;
   text-align: center;
   text-decoration: none;
+}
+
+.signup-form .errorList {
+  color: red;
+  font-style: bolder;
+  font-size: larger;
+}
+
+.helptext {
+  display: none;
 }
