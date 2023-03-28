@@ -1,26 +1,13 @@
 {% extends 'templates/base.html' %} {% block content %}
 
-<!-- <form class="login-form" method="post">
+<form class="login-form" method="post">
+    {% csrf_token %}
     <h2 class="login-h">Login</h2>
-    {% csrf_token %}
-    <div class="input">
-        <label for="{{ form.username.id_for_label }}">Username</label>
-        {{ form.username }}
-        <br />
-        <label for="{{ form.password.id_for_label }}">Password</label>
-        {{ form.password }}
-        <br />
-        Don't have an account? <a class="join-here" href="{% url 'account:signup' %}">Join here</a>.
-    </div>
     <br>
-    <button class="btn">
-        <span class="text">Submit</span>
-    </button>
-</form> -->
-
-<form method="post">
-    {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Login</button>
+    <br>
+    Don't have an account? <a class="join-here" href="{% url 'account:signup' %}">Join here</a>.
+    <br><br><br>
+    <button class="btn" type="submit">Login</button>
 </form>
 {% endblock %}

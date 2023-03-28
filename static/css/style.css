@@ -1246,3 +1246,26 @@ header .search {
 .icon:hover {
   color: #40E0D0;
 }
+
+#id_username {
+  margin-bottom: 10%;
+  font-size: 16px;
+}
+
+.login-form ul li {
+  border: 1px solid red;
+  border-radius: 7px;
+  padding: 3px;
+  text-decoration: none;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.update-form-create ul li {
+  list-style: none;
+  border: 1px solid red;
+  border-radius: 7px;
+  padding: 3px;
+  text-align: center;
+  text-decoration: none;
+}
