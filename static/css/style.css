@@ -591,15 +591,21 @@ header .search {
   }
   
   .body .content .comment button{
-    border: none;
+    border: 1px solid #40E0D0;
+    margin-top: 1%;
+    background: transparent;
+    color: #fff;
+    border-radius: 5px;
     padding: 10px;
-    font-weight: bolder;
-    box-shadow: 4px 6px rgb(65, 64, 64);
     cursor: pointer;
     float: right;
   }
-  
-  /* comment */
+
+  .body .content .comment button:hover{
+    background: #3e3e3e;
+    color: #fff;
+  }
+
   
   .comment-area{
     margin-top: 50px;
