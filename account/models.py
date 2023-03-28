@@ -68,7 +68,7 @@ class Profile(models.Model):
     # includes optional fields that the user can set
     name = models.CharField(max_length=30, blank=True)
     bio = models.TextField(default='Hello, I am new', max_length=100, blank=True)
-    image = models.ImageField(default='images/default.png', upload_to='images/', null=True)
+    image = models.ImageField(default='images/default.png', upload_to='images/', null=True, verbose_name="Icon:")
 
     def __str__(self):
         return self.user.username

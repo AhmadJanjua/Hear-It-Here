@@ -313,6 +313,10 @@ header .search {
     display: none;
 }
 
+.hide {
+  display: none;
+}
+
 @media (max-width: 800px) {
   header .nav-list {
       opacity: 0;
@@ -351,10 +355,6 @@ header .search {
 
    header.open .nav-list li a {
     font-size: 1.25em;
-    }
-
-    .hide {
-        display: none;
     }
 
     .profile {
@@ -1182,12 +1182,63 @@ header .search {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
+.created-by {
+  font-size: smaller;
+}
+
 .about {
   padding-left: 10%;
   padding-right: 10%;
 }
 
-.created-by {
-  font-size: smaller;
+.genre-types {
+  display: grid;
+  justify-content: center;
+  grid-gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 300px));
+  padding-bottom: 5%;
 }
 
+.about-titles {
+  color: #40E0D0;
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.genre h1 {
+  color: #40E0D0;
+  font-weight: bold;
+}
+
+.genre {
+  background: #111314;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.genre i {
+  font-size: 25px;
+}
+
+.main-about-p {
+  padding-left: 7%;
+  padding-right: 7%;
+  font-size: 15px;
+}
+
+.engagement-topics {
+  display: grid;
+  justify-content: center;
+  grid-gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 300px));
+}
+
+.topic {
+  text-align: center;
+}
+
+.topic i {
+  font-size: 40px;
+  margin-bottom: 20px;
+}

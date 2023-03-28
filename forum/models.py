@@ -28,7 +28,7 @@ class Post(models.Model):
 # Comment model
 class Comment(models.Model):
     # field of the model
-    description = models.TextField(null=False)
+    description = models.TextField(null=False, verbose_name="Reply:")
     time = models.DateTimeField(auto_now_add=True)
     # Foreign keys to user and post
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)

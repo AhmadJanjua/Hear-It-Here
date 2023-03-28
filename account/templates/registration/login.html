@@ -1,6 +1,6 @@
 {% extends 'templates/base.html' %} {% block content %}
 
-<form class="login-form" method="post">
+<!-- <form class="login-form" method="post">
     <h2 class="login-h">Login</h2>
     {% csrf_token %}
     <div class="input">
@@ -16,5 +16,11 @@
     <button class="btn">
         <span class="text">Submit</span>
     </button>
+</form> -->
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
 </form>
 {% endblock %}

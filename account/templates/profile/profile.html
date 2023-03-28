@@ -11,7 +11,7 @@
 			    <div class="profile-image">
 
 				<img class="img-profile" src="{{ profile.image.url }}"
-                     alt="" height="200" width="330">
+                     alt="" style="max-height: 200px; max-width: 330px; width: auto;">
 
 			    </div>
             </div>
@@ -44,7 +44,11 @@
 	</div>
 
 <main>
-    <h3>Posts Created By {{ profile.user.username }} ({{ profile.name }}):</h3>
+    {% if profile.name %}
+        <h3>Posts Created By {{ profile.user.username }} ({{ profile.name }}):</h3> 
+    {% else %}
+        <h3>Posts Created By {{ profile.user.username }}:</h3>
+    {% endif %}
 	<div class = "posts-table">
             <div class = "table-head">
                 <div class = "status">Status</div>
