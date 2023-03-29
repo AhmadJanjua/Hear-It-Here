@@ -1049,6 +1049,8 @@ header .search {
   padding-top: 20px;
 }
 
+
+
 .tinder--buttons button {
   border-radius: 50%;
   line-height: 60px;
@@ -1057,6 +1059,7 @@ header .search {
   background: #FFFFFF;
   display: inline-block;
   margin: 0 8px;
+  cursor: pointer;
 }
 
 .tinder--buttons button:focus {
@@ -1074,6 +1077,9 @@ header .search {
 
 .fa-remove {
   color: #CDD6DD;
+}
+.fa-reset:before {
+  content: "\f021"; 
 }
 
 .delete-btn {
@@ -1168,6 +1174,7 @@ header .search {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* translucent black background */
+  opacity: 0;
 }
 
 .popup-content {

@@ -7,7 +7,7 @@
     </div>
 
     <div class="tinder--cards">
-        <div class="tinder--card">
+        <div class="tinder--card" id="nas">
             <img
                 src="https://images.genius.com/deca44fb8344d17dc683a285c1ad8e1a.800x800x1.jpg"
             />
@@ -20,7 +20,7 @@
                 “Halftime,” and “Life’s a Bitch.”
             </p>
         </div>
-        <div class="tinder--card">
+        <div class="tinder--card" id="kdot">
             <img
                 src="https://media.pitchfork.com/photos/5929ad4cea9e61561daa60ba/1:1/w_600/d47a5880.jpg"
             />
@@ -32,14 +32,14 @@
                 “I,” and “The Blacker the Berry.”
             </p>
         </div>
-        <div class="tinder--card">
+        <div class="tinder--card" id="quran">
             <img
                 src="https://i0.wp.com/bydik.com/wp-content/uploads/2018/01/holy-al-quran-8973-e1664452257199.jpg?fit=1000%2C550&ssl=1"
             />
             <h3>Quran</h3>
             <p>Mashallah Brother</p>
         </div>
-        <div class="tinder--card">
+        <div class="tinder--card" id="duke">
             <img
                 src="http://www.beautifulsongoftheweek.com/wp-content/uploads/2013/11/duke-ellington-and-john-coltrane.jpg"
             />
@@ -56,6 +56,7 @@
         <button id="nope">
             <i class="fa fa-remove"></i><box-icon name="x"></box-icon>
         </button>
+
         <button id="love">
             <i class="fa fa-heart"></i><box-icon name="heart"></box-icon>
         </button>
@@ -67,6 +68,13 @@
         <p>Description of genre and why</p>
     </div>
 </div>
+
+<script>
+    const resetBtn = document.getElementById("reset");
+    resetBtn.addEventListener("click", () => {
+        location.reload();
+    });
+</script>
 <script src="{% static 'code/hammer.min.js' %}"></script>
 <script src="{% static 'code/card.js' %}"></script>
 {% endblock %}
