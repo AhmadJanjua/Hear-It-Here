@@ -8,7 +8,7 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.contrib.auth import login, logout
-from forum.models import Post
+from forum.models import Post, Category
 from .forms import SignUpForm, UpdateProfileForm
 from .models import CustomUser, Profile
 
@@ -118,5 +118,13 @@ def update_profile(request, username):
 def genre_view(request):
     return render(request, 'profile/genre.html')
 
+
 def about(request):
-    return render(request, 'profile/about.html')
+    # get all categories
+    categories = Category.objects.all()
+    # loop through and get total number of posts
+    total = 0
+    for category in categories:
+        total += category.post_set.count()
+    # render the home page with category info
+    return render(request, 'profile/about.html', {'categories': categories, 'total': total})
