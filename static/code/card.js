@@ -172,15 +172,39 @@ function createPopup(){
     // popup.querySelector('img').src = can add image
     popup.querySelector('p').textContent = 'R&B/Hip-Hop is a genre of popular music that combines elements of rhythm and blues and hip hop. R&B/Hip-Hop often incorporates smooth melodies and soulful vocals with the rhythmic beats and rap verses of hip hop. Two notable albums in this genre are Kiss Land by The Weeknd and To Pimp a Butterfly by Kendrick Lamar. Kiss Land, released in 2013, explores themes of love, sex, and fear through a blend of R&B and dark wave. To Pimp a Butterfly, released in 2015, is an expansive collage of hip-hop, funk and soul, with jazz firmly affixed to the center.';
   }
+  else if (likedCards.includes('week') && likedCards.includes('mj') ) {
+    popup.querySelector('h2').innerHTML = 'Your Genre is: R&B / Pop';
+    popup.querySelector('h3').innerHTML = ' You got this because you swiped right on The Weeknd-Kiss Land and  Michael Jackson-Thriller';
+    // popup.querySelector('img').src = can add image
+    popup.querySelector('p').textContent = 'R&B, or rhythm and blues, is a genre of popular music that combines elements of soul, gospel, jazz, and blues. R&B has evolved over time and now often incorporates elements of pop, funk, hip hop, and electronic music. The terms popular music and pop music are often used interchangeably, . Examples of pop music include Michael Jackson’s Thriller, released in 1982, and The Weeknd’s Kiss Land, released in 2013.';
+  }
   else if (likedCards.includes('kdot') && likedCards.includes('duke') ) {
     popup.querySelector('h2').innerHTML = 'Your Genre is: Jazz / Hip-Hop';
     popup.querySelector('h3').innerHTML = ' You got this because you swiped right on Kendrick Lamar-To Pimp a Butterfly, and Duke Ellington-Duke Ellington & John Coltrane';
     // popup.querySelector('img').src = can add image
     popup.querySelector('p').textContent = 'Jazz rap is a fusion of jazz and hip hop music that developed in the late 1980s and early 1990s. It is an alternative hip hop subgenre that combines the rhythm of hip hop with jazz instrumentation. Duke Ellington was an American jazz pianist, and ra from 1923 through the rest of his life. He is acknowledged as one of the greatest composers in jazz and his innovative arrangements featured his piano playing against a rich, deep sound. In 2015, rap superstar Kendrick Lamar brought new light to this hybrid with his second major-label album, To Pimp a Butterfly, which was an expansive collage of hip-hop, funk and soul, with jazz firmly affixed to the center.';
   }
-  else if (likedCards.includes('nas') && likedCards.includes('kdot')) {
+  else if (likedCards.includes('mj') && likedCards.includes('duke') ) {
+    popup.querySelector('h2').innerHTML = 'Your Genre is: Pop / Jazz';
+    popup.querySelector('h3').innerHTML = ' You got this because you swiped right on Micheal Jackson-Thriller and Duke Ellington-Duke Ellington & John Coltrane';
+    // popup.querySelector('img').src = can add image
+    popup.querySelector('p').textContent = 'Pop is a genre of popular music that originated in the 1950s. It is characterized by its catchy melodies, simple chord progressions, and relatable lyrics. It often incorporates elements from other styles such as rock, dance, hip hop, and country. Jazz is known for its improvisation, swing and blue notes, call and response vocals, polyrhythms, and syncopation. Jazz has roots in blues and ragtime. Two notable albums in this genre are Thriller by Micheal Jackson and Duke Ellington & John Coltrane by Duke Ellington. Pop music is characterized by its catchy melodies, simple chord progressions, and relatable lyrics. It often incorporates elements from other styles such as rock, dance, hip hop, and country.';
+  }
+  else if (likedCards.includes('sound') && likedCards.includes('duke') ) {
+    popup.querySelector('h2').innerHTML = 'Your Genre is: Soundtrack / Jazz';
+    popup.querySelector('h3').innerHTML = ' You got this because you swiped right on the Soundtracks and Jazz cards';
+    // popup.querySelector('img').src = can add image
+    popup.querySelector('p').textContent = 'Soundtrack is a term used for a selection of songs that are featured in a film or other visual media. These songs have become a category of their own, with increasingly high-quality music being composed. Notable soundtracks include "God of War Ragnorok", "Inception", "LA Noire" and "The Road to Perdition". Jazz is a music genre that originated in African American communities of New Orleans. Jazz is known for its improvisation, swing and blue notes, call and response vocals, polyrhythms, and syncopation. Jazz has roots in blues and ragtime.';
+  }
+  else if (likedCards.includes('mj')  ) {
+    popup.querySelector('h2').innerHTML = 'Your Genre is: Pop';
+    popup.querySelector('h3').innerHTML = ' You got this because you swiped right on Micheal Jackson-Thriller';
+    // popup.querySelector('img').src = can add image
+    popup.querySelector('p').textContent = 'The terms “popular music” and “pop music” are often used interchangeably, although the former describes all music that is popular and includes many diverse styles. Pop music is characterized by its catchy melodies, simple chord progressions, and relatable lyrics. It often incorporates elements from other styles such as rock, dance, hip hop, and country.';
+  }
+  else if (likedCards.includes('nas') || likedCards.includes('kdot')) {
     popup.querySelector('h2').innerHTML = 'Your Genre is: Rap';
-    popup.querySelector('h3').innerHTML = ' You got this because you swiped right on Kendrick Lamar-To Pimp a Butterfly, and Nas-Illmatic';
+    popup.querySelector('h3').innerHTML = ' You got this because you swiped right on Kendrick Lamar-To Pimp a Butterfly, Nas-Illmatic or both!';
     // popup.querySelector('img').src = can add image
     popup.querySelector('p').textContent = 'Rap is a genre of popular music that originated in African American communities in the United States in the 1970s. Nas and Kendrick Lamar are two prominent figures in rap music. Nas’ debut album, Illmatic, released in 1994, is widely regarded as one of the greatest hip-hop albums of all time. Kendrick Lamar’s second major-label album, To Pimp a Butterfly, released in 2015, was an expansive collage of hip-hop, funk and soul, with jazz firmly affixed to the center. Both albums have had a profound impact on the rap genre and continue to be celebrated for their artistry and influence.';
   }
@@ -189,12 +213,6 @@ function createPopup(){
     popup.querySelector('h3').innerHTML = ' You got this because you swiped right on The Weeknd-Kiss Land';
     // popup.querySelector('img').src = can add image
     popup.querySelector('p').textContent = 'R&B, or rhythm and blues, is a genre of popular music that combines elements of soul, gospel, jazz, and blues. R&B has evolved over time and now often incorporates elements of pop, funk, hip hop, and electronic music. R&B lyrical themes often encapsulate the experience of pain and the quest for freedom and joy, as well as triumphs and failures in terms of relationships, economics, and aspirations. The genre is known for its smooth melodies and soulful vocals.';
-  }
-  else if (likedCards.includes('sound') && likedCards.includes('duke') ) {
-    popup.querySelector('h2').innerHTML = 'Your Genre is: Soundtrack / Jazz';
-    popup.querySelector('h3').innerHTML = ' You got this because you swiped right on the Soundtracks and Jazz cards';
-    // popup.querySelector('img').src = can add image
-    popup.querySelector('p').textContent = 'Soundtrack is a term used for a selection of songs that are featured in a film or other visual media. These songs have become a category of their own, with increasingly high-quality music being composed. Notable soundtracks include "God of War Ragnorok", "Inception", "LA Noire" and "The Road to Perdition". Jazz is a music genre that originated in African American communities of New Orleans. Jazz is known for its improvisation, swing and blue notes, call and response vocals, polyrhythms, and syncopation. Jazz has roots in blues and ragtime.';
   }
   else if (likedCards.includes('duke')  ) {
     popup.querySelector('h2').innerHTML = 'Your Genre is: Jazz';
