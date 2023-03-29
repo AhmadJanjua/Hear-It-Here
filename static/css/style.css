@@ -665,6 +665,10 @@ header .search {
     color: black;
   }
 
+  .signup-form {
+    margin-top: 0% !important;
+  }
+
   .input {
     margin: 15px 0;
   }
@@ -1284,6 +1288,15 @@ header .search {
   font-size: 16px;
 }
 
+.signup-form #id_username, .signup-form #id_password, .signup-form #id_email {
+  margin-bottom: 10%;
+}
+
+.signup-form #id_username, .signup-form #id_email {
+  font-size: 15px;
+}
+
+
 .login-form ul li {
   border: 1px solid red;
   border-radius: 7px;
@@ -1314,12 +1327,21 @@ header .search {
   text-decoration: none;
 }
 
-.signup-form .errorList {
+.signup-form .errorlist li {
   color: red;
   font-style: bolder;
-  font-size: larger;
+  font-size: 14px;
+}
+
+.signup-form ul li {
+  margin: 10px 0;
+  padding: 0;
 }
 
 .helptext {
   display: none;
+}
+
+.navigate a:hover {
+  color: #40E0D0;
 }
