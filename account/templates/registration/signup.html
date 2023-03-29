@@ -38,7 +38,9 @@
     <h2 class="login-h">Sign up</h2>
     <br />
     {% csrf_token %} {{ form.as_p }}
-    <br /><br />
+    <br>
+    Already have an account? <a class="join-here" href="{% url 'account:login' %}">Login here</a>.
+    <br><br><br>
     <button class="btn" type="submit">Login</button>
 </form>
 {% endblock %}
