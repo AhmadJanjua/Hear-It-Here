@@ -107,7 +107,6 @@ function createButtonListener(love) {
       console.log("There are no more cards left!");
       //get ascii sum of liked cards
 
-      console.log("the sum is:" + sum);
       
       createPopup();
 
@@ -117,12 +116,6 @@ function createButtonListener(love) {
       popup.style.transition = 'opacity 3s ease-in-out';
       return false;
     }
-    for (var i = 0; i < likedCards.length; i++) {
-      for (var j = 0; j < likedCards[i].length; j++) {
-        sum += likedCards[i].charCodeAt(j);
-      }
-    }
-    console.log(sum);
     var card = cards[0];
 
     card.classList.add('removed');
@@ -152,8 +145,20 @@ love.addEventListener('click', loveListener);
 function createPopup(){
   //create a popup with the ascii sum
   const popup = document.getElementById('popup');
+
+
   //Rap genre
-  if (likedCards.includes('nas') && likedCards.includes('kdot')) {
+  if (likedCards.length == 4) {
+    popup.querySelector('h2').innerHTML = 'You swept right on all the cards??';
+    // popup.querySelector('img').src = can add image
+    popup.querySelector('p').textContent = 'Guess you like all types of music!';
+  }
+  else if (likedCards.includes('nas') && likedCards.includes('kdot') && likedCards.includes('jazz') ) {
+    popup.querySelector('h2').innerHTML = 'Your Genre is: Jazz / Hip-Hop';
+    // popup.querySelector('img').src = can add image
+    popup.querySelector('p').textContent = 'Rap music is a genre of popular music that originated in the United States in the 1970s. It consists of a stylized rhythmic music that commonly accompanies rapping, which is a rhythmic and rhyming speech that is chanted. You got this because you swiped right on Nas-illmatic and Kendrick Lamar-To Pimp a Butterfly';
+  }
+  else if (likedCards.includes('nas') && likedCards.includes('kdot')) {
     popup.querySelector('h2').innerHTML = 'Your Genre is: Rap';
     // popup.querySelector('img').src = can add image
     popup.querySelector('p').textContent = 'Rap music is a genre of popular music that originated in the United States in the 1970s. It consists of a stylized rhythmic music that commonly accompanies rapping, which is a rhythmic and rhyming speech that is chanted. You got this because you swiped right on Nas-illmatic and Kendrick Lamar-To Pimp a Butterfly';
@@ -165,11 +170,7 @@ function createPopup(){
     popup.querySelector('p').textContent = 'MashAllah brother! The Quran is the central religious text of Islam, which Muslims believe to be a revelation from God. It is widely regarded as the finest piece of literature in the Arabic language. You got this because you swiped right on the Quran';
   }
   
-  if (sum == 1732) {
-    popup.querySelector('h2').innerHTML = 'You swept right on all the cards??';
-    // popup.querySelector('img').src = can add image
-    popup.querySelector('p').textContent = 'Guess you like all types of music!';
-  }
+
  
 
 }
