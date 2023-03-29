@@ -71,6 +71,10 @@ def activate(request, uidb64, token):
         # activate the user, so they can log in.
         user.is_active = True
         user.save()
+
+        # login the user
+        login(request, user)
+        
         # display the confirmation email
         return render(request, 'email/EmailConfirmation.html')
     else:
