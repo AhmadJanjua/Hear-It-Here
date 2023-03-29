@@ -148,7 +148,7 @@ function createPopup(){
 
 
   //Rap genre
-  if (likedCards.length == 4) {
+  if (likedCards.length == (allCards.length - 1)) {
     popup.querySelector('h2').innerHTML = 'You swept right on all the cards??';
     popup.querySelector('h3').innerHTML = ' I think you should retry, click the reset button in the middle!';
     // popup.querySelector('img').src = can add image
@@ -160,7 +160,19 @@ function createPopup(){
     // popup.querySelector('img').src = can add image
     popup.querySelector('p').textContent = "Maybe you don't like music?";
   }
-  else if (likedCards.includes('nas') && likedCards.includes('kdot') && likedCards.includes('duke') ) {
+  else if (likedCards.includes('week') && likedCards.includes('duke') ) {
+    popup.querySelector('h2').innerHTML = 'Your Genre is: R&B / Jazz';
+    popup.querySelector('h3').innerHTML = ' You got this because you swiped right on The Weeknd-Kiss Land and Duke Ellington-Duke Ellington & John Coltrane';
+    // popup.querySelector('img').src = can add image
+    popup.querySelector('p').textContent = 'R&B is a genre of popular music that originated in African-American communities in the 1940s. Jazz is a music genre that originated in African American communities of New Orleans. Kiss Land is The Weeknd’s first studio album, released on September 10, 2013. Duke Ellington was an American composer, pianist, and leader of a jazz orchestra. Some of his most famous albums include Masterpieces by Ellington (1950), Duke Ellington & John Coltrane (1963), and Such Sweet Thunder (1957).';
+  }
+  else if (likedCards.includes('week') && likedCards.includes('kdot') ) {
+    popup.querySelector('h2').innerHTML = 'Your Genre is: R&B / Hip Hop';
+    popup.querySelector('h3').innerHTML = ' You got this because you swiped right on The Weeknd-Kiss Land and Kendrick Lamar-To Pimp a Butterfly';
+    // popup.querySelector('img').src = can add image
+    popup.querySelector('p').textContent = 'R&B/Hip-Hop is a genre of popular music that combines elements of rhythm and blues and hip hop. R&B/Hip-Hop often incorporates smooth melodies and soulful vocals with the rhythmic beats and rap verses of hip hop. Two notable albums in this genre are Kiss Land by The Weeknd and To Pimp a Butterfly by Kendrick Lamar. Kiss Land, released in 2013, explores themes of love, sex, and fear through a blend of R&B and dark wave. To Pimp a Butterfly, released in 2015, is an expansive collage of hip-hop, funk and soul, with jazz firmly affixed to the center.';
+  }
+  else if (likedCards.includes('kdot') && likedCards.includes('duke') ) {
     popup.querySelector('h2').innerHTML = 'Your Genre is: Jazz / Hip-Hop';
     popup.querySelector('h3').innerHTML = ' You got this because you swiped right on Kendrick Lamar-To Pimp a Butterfly, and Duke Ellington-Duke Ellington & John Coltrane';
     // popup.querySelector('img').src = can add image
@@ -172,13 +184,31 @@ function createPopup(){
     // popup.querySelector('img').src = can add image
     popup.querySelector('p').textContent = 'Rap is a genre of popular music that originated in African American communities in the United States in the 1970s. Nas and Kendrick Lamar are two prominent figures in rap music. Nas’ debut album, Illmatic, released in 1994, is widely regarded as one of the greatest hip-hop albums of all time. Kendrick Lamar’s second major-label album, To Pimp a Butterfly, released in 2015, was an expansive collage of hip-hop, funk and soul, with jazz firmly affixed to the center. Both albums have had a profound impact on the rap genre and continue to be celebrated for their artistry and influence.';
   }
-  //Quran genre
-  else if (likedCards.includes('quran')  ) {
-    popup.querySelector('h2').innerHTML = 'Your Genre is: Quran';
-    popup.querySelector('h3').innerHTML = ' You got this because you swiped right on the Quran';
+  else if (likedCards.includes('week')  ) {
+    popup.querySelector('h2').innerHTML = 'Your Genre is: R & B';
+    popup.querySelector('h3').innerHTML = ' You got this because you swiped right on The Weeknd-Kiss Land';
     // popup.querySelector('img').src = can add image
-    popup.querySelector('p').textContent = 'MashAllah brother! The Quran is the central religious text of Islam, which Muslims believe to be a revelation from God. It is widely regarded as the finest piece of literature in the Arabic language.';
+    popup.querySelector('p').textContent = 'R&B, or rhythm and blues, is a genre of popular music that combines elements of soul, gospel, jazz, and blues. R&B has evolved over time and now often incorporates elements of pop, funk, hip hop, and electronic music. R&B lyrical themes often encapsulate the experience of pain and the quest for freedom and joy, as well as triumphs and failures in terms of relationships, economics, and aspirations. The genre is known for its smooth melodies and soulful vocals.';
   }
+  else if (likedCards.includes('sound') && likedCards.includes('duke') ) {
+    popup.querySelector('h2').innerHTML = 'Your Genre is: Soundtrack / Jazz';
+    popup.querySelector('h3').innerHTML = ' You got this because you swiped right on the Soundtracks and Jazz cards';
+    // popup.querySelector('img').src = can add image
+    popup.querySelector('p').textContent = 'Soundtrack is a term used for a selection of songs that are featured in a film or other visual media. These songs have become a category of their own, with increasingly high-quality music being composed. Notable soundtracks include "God of War Ragnorok", "Inception", "LA Noire" and "The Road to Perdition". Jazz is a music genre that originated in African American communities of New Orleans. Jazz is known for its improvisation, swing and blue notes, call and response vocals, polyrhythms, and syncopation. Jazz has roots in blues and ragtime.';
+  }
+  else if (likedCards.includes('duke')  ) {
+    popup.querySelector('h2').innerHTML = 'Your Genre is: Jazz';
+    popup.querySelector('h3').innerHTML = ' You got this because you swiped right on Duke Ellington-Duke Ellington & John Coltrane';
+    // popup.querySelector('img').src = can add image
+    popup.querySelector('p').textContent = 'Jazz is a music genre that makes heavy use of improvisation, polyrhythms, syncopation, and the swung note.  Jazz makes heavy use of improvisation, polyrhythms, syncopation, and the swung note. Jazz has evolved to incorporate elements from many other genres and has a rich history of innovation and experimentation.';
+  }
+  else if (likedCards.includes('sound')  ) {
+    popup.querySelector('h2').innerHTML = 'Your Genre is: Soundtracks';
+    popup.querySelector('h3').innerHTML = ' You got this because you swiped right on the Soundtracks card';
+    // popup.querySelector('img').src = can add image
+    popup.querySelector('p').textContent = 'Soundtrack is a term used for a selection of songs that are featured in a film or other visual media. These songs have become a category of their own, with increasingly high-quality music being composed. Notable soundtracks include "God of War Ragnorok", "Inception", "LA Noire" and "The Road to Perdition".';
+  }
+
   
 
  
