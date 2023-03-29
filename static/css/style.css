@@ -1028,7 +1028,7 @@ header .search {
 
 .tinder--card h3 {
   /* margin-top: 12px; */
-  font-size: 32px;
+  font-size: 23px;
   padding: 0 16px;
   pointer-events: none;
   color: #111314;
@@ -1037,7 +1037,7 @@ header .search {
 
 .tinder--card p {
   /* margin-top: 12px; */
-  font-size: 18px;
+  font-size: 16px;
   padding: 0 16px;
   pointer-events: none;
   color: #111314;

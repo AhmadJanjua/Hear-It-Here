@@ -150,8 +150,15 @@ function createPopup(){
   //Rap genre
   if (likedCards.length == 4) {
     popup.querySelector('h2').innerHTML = 'You swept right on all the cards??';
+    popup.querySelector('h3').innerHTML = ' I think you should retry, click the reset button in the middle!';
     // popup.querySelector('img').src = can add image
-    popup.querySelector('p').textContent = 'Guess you like all types of music!';
+    popup.querySelector('p').textContent = 'Maybe you like all types of music!';
+  }
+  else if (likedCards.length == 0) {
+    popup.querySelector('h2').innerHTML = 'You didnt swipe right on any cards??';
+    popup.querySelector('h3').innerHTML = ' I think you should retry, click the reset button in the middle!';
+    // popup.querySelector('img').src = can add image
+    popup.querySelector('p').textContent = "Maybe you don't like music?";
   }
   else if (likedCards.includes('nas') && likedCards.includes('kdot') && likedCards.includes('duke') ) {
     popup.querySelector('h2').innerHTML = 'Your Genre is: Jazz / Hip-Hop';
