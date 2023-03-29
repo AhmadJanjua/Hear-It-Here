@@ -36,10 +36,9 @@
 
 <form class="signup-form" method="post">
     <h2 class="login-h">Sign up</h2>
-    <br>
-    {% csrf_token %}
-    {{ form.as_p }}
-    <br><br>
+    <br />
+    {% csrf_token %} {{ form.as_p }}
+    <br /><br />
     <button class="btn" type="submit">Login</button>
 </form>
 {% endblock %}
