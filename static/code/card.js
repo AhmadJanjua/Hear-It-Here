@@ -113,7 +113,7 @@ function createButtonListener(love) {
       // create a popup to show the user that there are no more cards left
       popup.style.opacity = '1';
       //add transition to the popup
-      popup.style.transition = 'opacity 3s ease-in-out';
+      popup.style.transition = 'opacity 2s ease-in-out';
       return false;
     }
     var card = cards[0];
