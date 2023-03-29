@@ -28,7 +28,7 @@
                 <div class = "status"><i class="fa-solid fa-fire"></i></div>
             {% endif %}
 
-            <div class = "subjects"><a href="{% url 'forum:view_post' category_id=category.id post_id=post.id %}"></a>
+            <div class = "subjects"><a href="{% url 'forum:view_post' category_id=category.id post_id=post.id %}">
                 {{ post.title }}</a>
                 
                 <div class="created-by">
