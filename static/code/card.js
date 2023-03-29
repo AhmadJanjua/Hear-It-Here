@@ -113,7 +113,7 @@ function createButtonListener(love) {
       // create a popup to show the user that there are no more cards left
       popup.style.opacity = '1';
       //add transition to the popup
-      popup.style.transition = 'opacity 3s ease-in-out';
+      popup.style.transition = 'opacity 4s ease-in-out';
       return false;
     }
     var card = cards[0];
@@ -153,21 +153,24 @@ function createPopup(){
     // popup.querySelector('img').src = can add image
     popup.querySelector('p').textContent = 'Guess you like all types of music!';
   }
-  else if (likedCards.includes('nas') && likedCards.includes('kdot') && likedCards.includes('jazz') ) {
+  else if (likedCards.includes('nas') && likedCards.includes('kdot') && likedCards.includes('duke') ) {
     popup.querySelector('h2').innerHTML = 'Your Genre is: Jazz / Hip-Hop';
+    popup.querySelector('h3').innerHTML = ' You got this because you swiped right on Kendrick Lamar-To Pimp a Butterfly, and Duke Ellington-Duke Ellington & John Coltrane';
     // popup.querySelector('img').src = can add image
-    popup.querySelector('p').textContent = 'Rap music is a genre of popular music that originated in the United States in the 1970s. It consists of a stylized rhythmic music that commonly accompanies rapping, which is a rhythmic and rhyming speech that is chanted. You got this because you swiped right on Nas-illmatic and Kendrick Lamar-To Pimp a Butterfly';
+    popup.querySelector('p').textContent = 'Jazz rap is a fusion of jazz and hip hop music that developed in the late 1980s and early 1990s. It is an alternative hip hop subgenre that combines the rhythm of hip hop with jazz instrumentation. Duke Ellington was an American jazz pianist, and ra from 1923 through the rest of his life. He is acknowledged as one of the greatest composers in jazz and his innovative arrangements featured his piano playing against a rich, deep sound. In 2015, rap superstar Kendrick Lamar brought new light to this hybrid with his second major-label album, To Pimp a Butterfly, which was an expansive collage of hip-hop, funk and soul, with jazz firmly affixed to the center.';
   }
   else if (likedCards.includes('nas') && likedCards.includes('kdot')) {
     popup.querySelector('h2').innerHTML = 'Your Genre is: Rap';
+    popup.querySelector('h3').innerHTML = ' You got this because you swiped right on Kendrick Lamar-To Pimp a Butterfly, and Nas-Illmatic';
     // popup.querySelector('img').src = can add image
-    popup.querySelector('p').textContent = 'Rap music is a genre of popular music that originated in the United States in the 1970s. It consists of a stylized rhythmic music that commonly accompanies rapping, which is a rhythmic and rhyming speech that is chanted. You got this because you swiped right on Nas-illmatic and Kendrick Lamar-To Pimp a Butterfly';
+    popup.querySelector('p').textContent = 'Rap is a genre of popular music that originated in African American communities in the United States in the 1970s. Nas and Kendrick Lamar are two prominent figures in rap music. Nas’ debut album, Illmatic, released in 1994, is widely regarded as one of the greatest hip-hop albums of all time. Kendrick Lamar’s second major-label album, To Pimp a Butterfly, released in 2015, was an expansive collage of hip-hop, funk and soul, with jazz firmly affixed to the center. Both albums have had a profound impact on the rap genre and continue to be celebrated for their artistry and influence.';
   }
   //Quran genre
   else if (likedCards.includes('quran')  ) {
     popup.querySelector('h2').innerHTML = 'Your Genre is: Quran';
+    popup.querySelector('h3').innerHTML = ' You got this because you swiped right on the Quran';
     // popup.querySelector('img').src = can add image
-    popup.querySelector('p').textContent = 'MashAllah brother! The Quran is the central religious text of Islam, which Muslims believe to be a revelation from God. It is widely regarded as the finest piece of literature in the Arabic language. You got this because you swiped right on the Quran';
+    popup.querySelector('p').textContent = 'MashAllah brother! The Quran is the central religious text of Islam, which Muslims believe to be a revelation from God. It is widely regarded as the finest piece of literature in the Arabic language.';
   }
   
 
