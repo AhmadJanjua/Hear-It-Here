@@ -7,6 +7,7 @@ from .models import CustomUser, Profile
 class SignUpForm(UserCreationForm):
     email = forms.EmailField(max_length=255, label='Email Address')
     username = forms.CharField(max_length=50, label='Username')
+    password2 = forms.CharField(widget=forms.PasswordInput, label='Confirm Password')
 
     class Meta:
         model = CustomUser
