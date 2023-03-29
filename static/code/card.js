@@ -113,7 +113,7 @@ function createButtonListener(love) {
       // create a popup to show the user that there are no more cards left
       popup.style.opacity = '1';
       //add transition to the popup
-      popup.style.transition = 'opacity 4s ease-in-out';
+      popup.style.transition = 'opacity 3s ease-in-out';
       return false;
     }
     var card = cards[0];
@@ -152,7 +152,7 @@ function createPopup(){
     popup.querySelector('h2').innerHTML = 'You swept right on all the cards??';
     popup.querySelector('h3').innerHTML = ' I think you should retry, click the reset button in the middle!';
     // popup.querySelector('img').src = can add image
-    popup.querySelector('p').textContent = 'Maybe you like all types of music!';
+    popup.querySelector('p').textContent = 'Maybe you like all types of music?';
   }
   else if (likedCards.length == 0) {
     popup.querySelector('h2').innerHTML = 'You didnt swipe right on any cards??';
