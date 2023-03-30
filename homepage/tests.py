@@ -16,7 +16,7 @@ class HomeResponseViewTestCase(TestCase):
     def test_home_message(self):
         # Test that the home page contains the expected welcome message
         response = self.client.get(self.home_url)
-        self.assertContains(response, 'Welcome to the homepage!')
+        self.assertContains(response, 'General Discussions')
 
     def test_home_return_respose(self):
         # Test that the home URL returns an instance of the HttpResponse object
