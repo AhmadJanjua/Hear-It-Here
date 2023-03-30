@@ -123,24 +123,37 @@ h1{
     display: none;
   }
 
-  @media screen and (max-width: 460px) and (max-width: 1024px){
+  @media screen and (min-width: 460px) and (max-width: 1024px){
     .container{
       margin: 0 15px;
       padding-bottom: 15px !important;
       padding: 0 15px;
     }
+  
+    
     .subforum-row{
         display: grid;
-        grid-template-columns: 10% 60% 10% 20%;
+        grid-template-columns: 25% 75%;
+        grid-template-rows: 65% 35%;
     }
-    .subforum-icon{
-        font-size: 35px;
+  
+    .subforum-stats{
+        font-size: 12px;
     }
-    html{
-        font-size: 16px;
+  
+    .subforum-divider{
+        display: block;
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(190, 190, 190, 0), rgba(255,255,255, 0.75), rgba(190,190,190, 0));
     }
-    h1{
-        font-size: 18px;
+
+    .content-p {
+      font-size: smaller;
+    }
+
+    .subforum-description{
+      padding-bottom: 20%;
     }
   }
 
